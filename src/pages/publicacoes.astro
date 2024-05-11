@@ -1,0 +1,174 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+
+const metadata = {
+  title: 'Publicações',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- Hero Widget ******************* -->
+  <Hero
+    id="grupo"
+    tagline="Produção"
+  >
+    <Fragment slot="title">
+    Publicações do <span class="text-accent">MAPE</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+     Confira nossos estudos e publicações acadêmicas
+    </Fragment>
+    <Fragment slot="content">
+    <div class="-mb-32"></div>
+    </Fragment>
+  </Hero>
+
+
+  <!-- Artigos ************** -->
+
+  <Features3
+    id="artigos"
+    title="Artigos"
+    subtitle="Artigos acadêmicos selecionados publicados em periódicos"
+    columns={2}
+    isBeforeContent={true}
+    items={[
+       {
+        title: 'Deu Match? Uma introdução às técnicas de pareamento',
+        journal: 'Revista Brasileira de Ciências Sociais, v. 38, 2023',
+        autor:'Bruno Schaefer e Dalson Figueiredo Filho',
+        doi: 'https://doi.org/10.1590/3811039/2023',
+        pdf: 'https://www.scielo.br/j/rbcsoc/a/GfkxDWdrwdwf4BZcwjGt6pF/?format=pdf&lang=pt',
+      },
+      {
+        title: 'Plutocratas, personalistas ou inexperientes: uma revisão sistemática sobre autofinanciamento eleitoral',
+        journal: 'Agenda Política, v. 10, n. 3, 2023',
+        autor:'Bruno Schaefer',
+        doi: 'https://doi.org/10.31990/agenda.2022.3.4 ',
+        pdf: 'https://www.agendapolitica.ufscar.br/index.php/agendapolitica/article/view/792/421',
+      },
+      {
+        title: 'Government actions against the new coronavirus: evidence from the Brazilian states',
+        journal: 'Revista de Administração Pública, v.54, 2020',
+        autor:'Bruno Schaefer; Roberta Carnelos Resende; Sara Epitácio; Mariah Torres Aleixo',
+        doi: 'https://doi.org/10.1590/0034-761220200503x',
+        pdf: 'https://www.scielo.br/j/rap/a/XMSSSJLTpx3PFDj8dmsRZ8t/?format=pdf&lang=en',
+      },
+      {
+        title: 'Centralização nos partidos brasileiros: Evidências a partir da distribuição do fundo partidário (2010-2016)',
+        journal: 'TEORIA & PESQUISA (ON LINE), v.28, 2019',
+        autor:'Bruno Schaefer',
+        doi: 'https://doi.org/10.4322/tp.v28i2.737',
+        pdf: 'https://www.teoriaepesquisa.ufscar.br/index.php/tp/article/view/737/428',
+      },
+      {
+        title: 'Política Distributiva em Coalizão',
+        journal: 'Revista Dados, Dados, 67(1), 2023',
+        autor:'Fernando Meireles',
+        doi: 'https://doi.org/10.1590/dados.2024.67.1.308',
+        pdf: 'https://www.scielo.br/j/dados/a/RkmpG7bYsVq9v9LhLPC4Yqx/?format=pdf&lang=pt',
+      },
+      {
+        title: 'Partisan alignment and requests for federal transfers in Brazil',
+        journal: 'Revista de Administração Pública, 53, 2019',
+        autor: 'Fernando Meireles',
+        doi: 'https://doi.org/10.1590/0034-761220170282',
+        pdf: 'https://www.scielo.br/j/rap/a/7BH4hdkFhDHbhgVbrJfxZPP/?format=pdf&lang=en',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+    <div class="absolute inset-0 bg-[#F8F9F6]"></div>
+    </Fragment>
+  </Features3>
+
+
+  <!-- Papers ************** -->
+
+  <Features3
+    id="papers"
+    title="Working papers"
+    subtitle="Working papers e notas técnicas produzidas pelo <span class='text-accent font-bold'>MAPE</span>"
+    columns={2}
+    isBeforeContent={true}
+    items={[
+      {
+        title: 'Nota técnica: Banco de Dados Propaganda eleitoral (HGPE) dos candidatos a deputado federal do Estado do Rio de Janeiro – 1998-2018',
+        autor: ' Argelina Cheibub Figueiredo, Bruno Marques Schaefer, Fernando Meireles e Carlos Martins de Freitas',
+        doi: 'https://doi.org/10.31219/osf.io/u9jne',
+        pdf: 'https://osf.io/preprints/osf/u9jne',
+      },
+    ]}
+  >
+  </Features3>
+
+
+  <!-- Capítulos e livros ************** -->
+
+  <Features3
+    id="livros"
+    title="Capítulos e livros"
+    subtitle="Livros e capítulos publicados pela equipe do <span class='text-accent font-bold'>MAPE</span>"
+    columns={2}
+    isBeforeContent={true}
+    items={[
+      {
+        title: 'O financiamento partidário na nova democracia brasileira: um equilíbrio necessário',
+        autor: 'Silvana Krause e Bruno Schaefer',
+        journal: 'Sistematização das normas eleitorais : eixo temático VIII : partidos políticos.1 ed.Brasília: TSE, v.9, 2022',
+        pdf: 'https://www.tse.jus.br/institucional/catalogo-de-publicacoes/lista-do-catalogo-de-publicacoes/publicacoes/s/sistematizacao-das-normas-eleitorais-2013-eixo-tematico-viii-partidos-politicos',
+      },
+      {
+        title: 'Regras e ambientes: coligações e seus impactos no Legislativo municipal',
+        autor: 'Silvana Krause, Wagner Mancuso e Bruno Schaefer',
+        journal: 'Eleições Municipais na Pandemia.1 ed.Rio de Janeiro: FGV, 2022',
+        pdf: 'https://editora.fgv.br/produto/eleicoes-municipais-na-pandemia-3716',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+    <div class="absolute inset-0 bg-[#F8F9F6]"></div>
+    </Fragment>
+  </Features3>
+
+
+  <!-- Papers ************** -->
+
+  <Features3
+    id="imprensa"
+    title="Na imprensa"
+    subtitle="Artigos, entrevistas e participações em na mídia"
+    columns={1}
+    isBeforeContent={true}
+    items={[
+      {
+        title: 'O impacto de anistiar partidos que atropelam regras eleitorais',
+        journal: 'Nexo Jornal',
+        doi: 'https://www.nexojornal.com.br/expresso/2023/05/16/O-impacto-de-anistiar-partidos-que-atropelam-regras-eleitorais ',
+      },
+      {
+        title: 'Congresso hostil expõe fracasso de Lula em apelo por voto em deputados "do time"',
+        journal: 'Folha de S.Paulo',
+        doi: 'https://www1.folha.uol.com.br/poder/2023/06/congresso-hostil-expoe-fracasso-de-lula-em-apelo-por-voto-em-deputados-do-time.shtml ',
+      },
+      {
+        title: 'Comunistas do PL',
+        journal: 'O Globo',
+        doi: 'https://oglobo.globo.com/politica/noticia/2023/07/09/comunistas-do-pl-19-dos-99-deputados-do-partido-de-bolsonaro-tem-historico-pro-governo-lula.ghtml',
+      },
+      {
+        title: 'Como Lula tenta frear o controle parlamentar do Orçamento',
+        journal: 'Nexo Jornal',
+        doi: 'https://www.nexojornal.com.br/expresso/2024/01/02/como-lula-tenta-frear-o-controle-parlamentar-do-orcamento',
+      },
+    ]}
+  >
+  </Features3>
+
+
+  
+</Layout>

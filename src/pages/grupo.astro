@@ -1,0 +1,106 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+
+const metadata = {
+  title: 'Sobre',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    id="grupo"
+    tagline="Grupo"
+  >
+    <Fragment slot="title">
+      Sobre o <span class="text-accent dark:text-white highlight">MAPE</span>
+    </Fragment>
+
+    <Fragment slot="content">
+    Por que alguns governos conseguem investir mais em saúde e educação do que outros? Como sabemos se uma política alcançou seus objetivos iniciais? Reeleger governantes faz diferença na vida da população? <br><br>
+
+    Essas e outras perguntas falam diretamente sobre o funcionamento da democracia e estão no centro das preocupações de governos, organizações e academia no Brasil e no mundo. Respondê-las, no entanto, requer sólido treinameto teórico e metodológico, bem como capacidade de transitar por campos disciplinares distintos para que possamos compreender o <span class="italic">Estado em ação</span>. <br><br>
+    
+    O <span class="text-accent font-bold">MAPE</span> tem como objetivo central ser um catalisador de pessoas com o conhecimento necessário para responder a essas perguntas. Nossa missão é produzir evidência científica para intervir decisivamente em debates públicos sobre o funcionamento da nossa democracia no seu aspecto mais central — como ela afeta a vida das pessoas.
+    </Fragment>
+  </Hero>
+
+    <!-- Steps2 Widget ****************** -->
+
+    <Steps2
+    id="linhas"
+    tagline="Investigação"
+    title="Nossas linhas de pesquisa"
+    subtitle="Conduzimos pesquisas para entender as conexões entre eleições, representação política e políticas públicas. Atuamos em três linhas principais: eleições, avaliação de políticas públicas e desigualdades."
+    items={[
+      {
+        title: 'Eleições e representação',
+        description:
+          'Eleições são mecanismos de controle dos eleitores sobre os políticos. Por isso mesmo, entender até que ponto representantes transformam em políticas as preferências da população é fundamental para a democracia, objetivo central desta linha de pesquisa. GÊNERO. ',
+      },
+      {
+        title: 'Avaliação de políticas públicas',
+        description:
+        'Como avaliar se uma política cumpriu seus objetivos? Como monitorar a sua execução e implementação? Como a população reage a mudanças do <span class="italic">status quo?</span> Essas questões motivam esta linha de pesquisa.',
+      },
+      {
+        title: 'A política das políticas públicas',
+        description:
+        'Como políticas públicas afetam o desempenho eleitoral de políticos? Como estes alocam recursos públicos? Quais atores se envolvem no processo de formulação da agenda de políticas? Essas e outras questões são abordadas nessa linha, com foco em políticas distributivas, redistributivas e regulatórias.',
+      },
+    ]}
+  />
+
+  <!-- Quem somos *********** -->
+
+  <Testimonials
+    id="quem"
+    tagline="Pesquisadores"
+    title="Conheça nossa equipe"
+    testimonials={[
+      {
+        name: 'Bruno Schaefer',
+        job: 'Coordenador',
+        email: "mailto:bruno.schaefer@iesp.uerj.br",
+        image: {
+          src: 'https://iesp.uerj.br/wp-content/uploads/2023/05/Bruno-Schaefer.png',
+          alt: 'Bruno Schaefer',
+        },
+      },
+      {
+        name: 'Fernando Meireles',
+        job: 'Coordenador',
+        website: 'https://fmeireles.com',
+        twitter: 'https://twitter.com/fmeireles',
+        email: "mailto:fernando.meireles@iesp.uerj.br",
+        lattes: "http://lattes.cnpq.br/9180210634743879",
+        image: {
+          src: 'https://fmeireles.com/img/headshot.jpeg',
+          alt: 'Fernando Meireles',
+        },
+      },
+      {
+        name: 'Fulana da Silva',
+        job: 'Pesquisadora',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554727242-741c14fa561c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Fulana',
+        },
+      },
+      {
+        name: 'Fulano da Silva',
+        job: 'Pesquisador',
+        image: {
+          src: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Fulano',
+        },
+      },
+
+    ]}
+  />
+
+</Layout>

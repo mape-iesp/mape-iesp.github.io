@@ -1,0 +1,126 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Projetos',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    id="grupo"
+    tagline="Atividades"
+  >
+    <Fragment slot="title">
+    Projetos do <span class="text-accent">MAPE</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+     Conheça alguns dos projetos de pesquisa desenvolvidos pela nossa equipe
+    </Fragment>
+    <Fragment slot="content">
+    <div class="-mb-32"></div>
+    </Fragment>
+  </Hero>
+
+  <!-- Projeto 1 ******************* -->
+  <Content
+    tagline="Projeto"
+    title="Efeitos do instituto da reeleição"
+    isReversed
+    items={[
+      {
+        title: 'Objetivo',
+        description:
+          'A possibilidade de reeleger um governo é tema envolto em polêmicas e alvo frequente de Projetos de Lei no Congresso. O objetivo deste projeto é analisar se a reeleição de um governo realmente faz diferença na qualidade da gestão pública, principalmente em relação às políticas públicas de saúde e educação recebidos pela população dos municípios brasileiros.',
+      },
+      {
+        title: 'Pesquisa',
+        description: `Compilamos a maior base de dados sobre reeleição municipal no Brasil, cobrindo mais de 10 mil pleitos entre 2000 e 2020 que foram disputadas por um prefeito ou prefeita que buscava a reeleição. Com esses dados, analisamos se segundos mandatos são piores do que os primeiros comparando diferentes indicadores de políticas públicas. Não encontramos evidências de que a reeleição de um governo faça diferença na qualidade da gestão pública.`,
+      },
+    ]}
+    image={{
+      src: '~/assets/images/urna.jpg',
+      alt: 'Urna | Unsplash',
+      url: 'https://unsplash.com/pt-br/fotografias/uma-pessoa-esta-votando-em-uma-caixa-T9CXBZLUvic',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight">
+        Reeleger um governo faz diferença? 
+      </h3>
+    </Fragment>
+    <Fragment slot="bg">
+        <div class="absolute inset-0 bg-[#F8F9F6]"></div>
+    </Fragment>
+  </Content>
+
+
+  <!-- Projeto 2 ******************* -->
+  <Content
+    tagline="Projeto"
+    title="Transferência de renda"
+    items={[
+      {
+        title: 'Objetivo',
+        description:
+          'Programas de transferência de renda à população, como o Auxílio Brasil e o Bolsa Família, são reconhecidamente importantes para a redução da pobreza e da desigualdade no Brasil. O objetivo deste projeto é analisar se esses programas têm impactos também nas eleições, ou seja, se a população tende a votar nas candidaturas que imeplementam esses programas.',
+      },
+      {
+        title: 'Pesquisa',
+        description: `Estudamos o Auxílio Brasil, que expandiu e remodelou o Bolsa Família, ampliando número de pessoas beneficiárias o valor pago do auxílio no ano de 2022. Com uma série que inclui eleições presidenciais desde 1989, nossos estudos indicam que tanto governos do PT quanto, recentemente, do ex-Presidente Jair Bolsonaro tiveram incrementos expressivos nas votações em municípios com maior proporção de beneficiários.`,
+      },
+    ]}
+    image={{
+      src: '~/assets/images/casas.png',
+      alt: 'Casas | Unsplash',
+      url: 'https://unsplash.com/pt-br/fotografias/vista-aerea-da-cidade-durante-o-dia-rewO0MdYCjw',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight">
+        Quais são os impactos eleitorais de programas de transferência de renda?
+      </h3>
+    </Fragment>
+  </Content>
+
+
+  <!-- Projeto 3 ******************* -->
+  <Content
+    tagline="Projeto"
+    title="Desigualdades de gênero em eleções e partidos"
+    isReversed
+    items={[
+      {
+        title: 'Objetivo',
+        description:
+          'A desigualdade de gênero no acesso à representação política assume várias formas, do efeito de estereótipos dos eleitores em relação a mulheres, desigualdade no acesso ao financiamento de campanhas, até a violência política, entre outros. Um ponto ainda pouco estudado na relação entre gênero e representação política é o papel dos partidos. A ocupação de cargos no interior destes é essencial dado que detêm a prerrogativa de recrutar candidaturas e distribuir recursos, como dinheiro e tempo de televisão. O objetivo deste projeto é investigar se, e como, partidos funcionam como gate-keepers do acesso ao campo político, cirando desigualdades de gênero na política.',
+      },
+      {
+        title: 'Pesquisa',
+        description: `Este projeto analisa, em primeiro lugar, quais fatores impactam a probabilidade de mulheres acessarem cargos de direção partidária; em segundo, se a sobrevivência em cargos de comando partidário é desigual entre homens e mulheres; e, por fim, quais os impactos de mulheres ocuparem cargos de direção partidária sobre a oferta e sucesso de candidaturas femininas. Usamos um banco de dados original contendo informações de todos os dirigentes partidários em nível nacional e estadual no período de 2014 até 2022, mesclados com informações das eleições nacionais e municipais de 2016, 2018, 2020 e 2022.
+`,
+      },
+    ]}
+    image={{
+      src: '~/assets/images/women.jpg',
+      url: 'https://unsplash.com/pt-br/fotografias/foto-em-tons-de-cinza-de-grupo-de-pessoas-realizando-comicio-na-rua-raU50Q_AcS0',
+      alt: 'Mulheres | Unsplash',    
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight">
+        Partidos políticos discriminam mulheres? 
+      </h3>
+    </Fragment>
+    <Fragment slot="bg">
+        <div class="absolute inset-0 bg-[#F8F9F6]"></div>
+    </Fragment>
+  </Content>
+
+
+</Layout>

@@ -1,0 +1,29 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Ferramentas',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    id="grupo"
+    tagline="Dados"
+  >
+    <Fragment slot="title">
+    Bases de dados
+    </Fragment>
+
+    <Fragment slot="subtitle">
+     Em breve
+    </Fragment>
+    <Fragment slot="content">
+    <div class="-mb-32"></div>
+    </Fragment>
+  </Hero>
+
+</Layout>

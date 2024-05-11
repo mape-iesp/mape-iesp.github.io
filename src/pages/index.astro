@@ -1,0 +1,148 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'MAPE | Laboratório de Monitoramento e Avaliação de Políticas e Eleições',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Saiba mais',
+        href: '#mais',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white highlight">MAPE</span> <span class="hidden xl:inline">é o Laboratório de Monitoramento e Avaliação de Políticas e Eleições do IESP-UERJ</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Somos um grupo de pesquisa empírico em Ciências Sociais que produz conhecimento sobre políticas públicas e eleições para apoiar a tomada de decisão baseada em evidências
+    </Fragment>
+  </Hero>
+
+  
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    id="mais"
+    title="O que fazemos"
+    subtitle="O <span class='text-accent font-bold dark:text-white highlight'>MAPE</span> é dedicado a estudar políticas públicas, eleições e suas conexões. Nosso objetivo é qualificar a produção acadêmica sobre o tema e incidir decisivamente no debate público."
+    isReversed={true}
+    callToAction={{
+      text: 'Nossa metodologia',
+      href: '#metodologia',
+    }}
+    items={[
+      {
+        title: 'Estudos eleitorais',
+        description: 'Analisamos eleições municipais, estaduais e nacionais para entender como a competição eleitoral afeta a formulação e implementação de políticas públicas',
+        icon: 'tabler:chart-histogram',
+      },
+      {
+        title: 'Avaliação de impacto',
+        description:
+          'Utilizamos técnicas de avaliação de impacto para mensurar os resultados de políticas públicas em diferentes áreas e ajudar governos e organizações a tomar decisões baseadas em evidências',
+        icon: 'tabler:arrow-move-right',
+      },
+      {
+        title: 'Monitoramento de políticas',
+        description:
+          'Acompanhamos a implementação de políticas nas áreas social, de saúde e educação, de meio ambiente, de segurança pública e de direitos humanos para mapear tendências e desafios na provisão de serviços públicos no país',
+        icon: 'tabler:zoom-code',
+      },
+    ]}
+    />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="metodologia"
+    isReversed
+    tagline="Como fazemos"
+    title="Combinamos diferentes metodologias para estudar políticas e eleições"
+    callToAction={{
+        text: 'Sobre o grupo',
+        href: '#nos',
+      }}  
+    items={[
+      {
+        title: 'Inferência causal',
+        description:
+          'Produzimos estudos com desenhos experimentais e estratégias de identificação de efeitos causais para mensurar os impactos de políticas públicas e de outros tipos de intervação',
+      },
+      {
+        title: 'Ciência de dados',
+        description:
+          'Usamos métodos computacionais e aprendizado de máquina para extrair, organizar e analisar grandes volumes de dados e de textos para entender processos como a formulação de políticas públicas e mudanças na opinão pública',
+      },
+      {
+        title: 'Abordagem multi-métodos',
+        description:
+          'Integramos metodologias quantitativas e qualitativas, como trabalho documental e entrevistas em profundidade, para entender a dinâmica política e social em diferentes contextos',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/plot.png',
+      alt: '',
+    }} 
+  >
+  </Content>
+
+
+    <!-- Features2 Widget ************** -->
+
+    <Features2
+    id="nos"
+    title="O grupo e o nosso trabalho"
+    tagline="Sobre"
+    items={[
+      {
+        title: 'O grupo',
+        description: "O <span class='text-accent font-bold dark:text-white highlight'>MAPE</span> é um grupo de pesquisa acadêmico em Ciências Sociais e está sediado no Instituto de Estudos Sociais e Políticos da Universidade do Estado do Rio de Janeiro (<a href='http://www.iesp.uerj.br' target='_blank' class='text-accent dark:text-white highlight'>IESP-UERJ</a>)",
+        callToAction: {
+          text: 'Saiba mais',
+          href: getPermalink('grupo#grupo'),
+        },
+      },
+      {
+        title: 'Quem somos',
+        description: "Nosso grupo é formado por professores, pesquisadores e especialistas de diferentes instituições que se dedicam a estudar políticas públicas e eleições",
+        callToAction: {
+          text: 'Saiba mais',
+          href: getPermalink('grupo#quem'),
+        },
+      },
+      {
+        title: 'Publicações',
+        description: 'Confira os artigos, estudos acadêmicos e levantamentos produzidos pela nossa equipe e colaboradores em periódicos nacionais e internacionais',
+        callToAction: {
+          text: 'Saiba mais',
+          href: '#projetos',
+        },
+      },
+    ]}
+  >
+  </Features2>
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <BlogLatestPosts
+    title="Notícias e textos"
+    information={`Fique por dentro das últimas notícias e publicações do <span class="text-accent dark:text-white font-bold highlight">MAPE</span>`}
+  />
+</Layout>

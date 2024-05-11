@@ -1,0 +1,87 @@
+---
+import { twMerge } from 'tailwind-merge';
+import type { ItemGrid } from '~/types';
+import { Icon } from 'astro-icon/components';
+
+const { items = [], columns, classes = {} } = Astro.props as ItemGrid;
+
+const {
+  container: containerClass = '',
+  panel: panelClass = '',
+  title: titleClass = '',
+  autor: autorClass = '',
+  journal: journalClass = '',
+  doi: doiClass = '',
+  pdf: pdfClass = '',
+  link: linkClass = '',
+} = classes;
+---
+
+{
+  items && (
+    <div
+      class={twMerge(
+        `grid mx-auto gap-8 md:gap-y-12 ${
+          columns === 4
+            ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'
+            : columns === 3
+            ? 'lg:grid-cols-3 sm:grid-cols-2'
+            : columns === 2
+            ? 'sm:grid-cols-2 gap-4'
+            : ''
+        }`,
+        containerClass
+      )}
+    >
+      {items.map(({ title, autor, journal, doi, pdf, link, classes: itemClasses = {} }) => (
+        <div>
+          <div class={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}>
+
+            <div class="mt-0.5">
+              {title && <h3 class={twMerge('text-xl', titleClass, itemClasses?.title)}>{title}</h3>}
+              {journal && (
+                <p
+                  class={twMerge(`${title ? 'mt-0' : ''} italic text-muted text-lg`, journalClass, itemClasses?.description)}
+                  set:html={journal}
+                />
+              )}
+              {autor && (
+                <p
+                  class={twMerge(`${title ? 'mt-3' : ''} text-muted`, autorClass, itemClasses?.description)}
+                  set:html={autor}
+                />
+              )}
+
+              <div class="flex-grow mt-3">               
+                {doi && 
+                <a
+                class="text-muted dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-400 dark:focus:ring-gray-700 rounded-lg text-sm p-1 inline-flex"
+                href={doi}
+                target="_blank">
+                <Icon name='tabler:external-link' class="w-6 h-6" />
+                </a>
+                } 
+                {pdf && 
+                <a
+                class="text-muted dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-400 dark:focus:ring-gray-700 rounded-lg text-sm p-1 inline-flex"
+                href={pdf}
+                target="_blank">
+                <Icon name='tabler:file-type-pdf' class="w-6 h-6" />
+                </a>
+                } 
+                {linkClass && 
+                <a
+                class="text-muted dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-400 dark:focus:ring-gray-700 rounded-lg text-sm p-1 inline-flex"
+                href={link}
+                target="_blank">
+                <Icon name='tabler:link' class="w-6 h-6" />
+                </a>
+                } 
+            </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}

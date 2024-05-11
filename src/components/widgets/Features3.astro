@@ -1,0 +1,44 @@
+---
+import Headline from '~/components/ui/Headline.astro';
+import ItemGrid from '~/components/ui/ItemGrid3.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import type { Features } from '~/types';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  items = [],
+  columns,
+  isBeforeContent,
+  isAfterContent,
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props as Features;
+---
+
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`${isBeforeContent ? 'md:pb-8 lg:pb-12' : ''} ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''} ${
+    classes?.container ?? ''
+  }`}
+  bg={bg}
+>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline} />
+
+  <ItemGrid
+    items={items}
+    columns={columns}
+    defaultIcon='tabler:circle-arrow-right-filled'
+    classes={{
+      container: 'mt-12 justify-center',
+      panel: 'max-w-full p-4 md:p-6 rounded-md shadow-lg sm:max-w-full',
+      title: 'text-xl font-semibold flex items',
+      ...((classes?.items as {}) ?? {}),
+    }}
+  />
+</WidgetWrapper>
