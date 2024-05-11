@@ -1,6 +1,6 @@
 site:
   name: MAPE
-  site: 'https://mape-iesp.github.io/'
+  site: 'https://mape.org.br/'
   base: '/'
   trailingSlash: false
 
@@ -33,7 +33,7 @@ metadata:
     cardType: summary_large_image
 
 i18n:
-  language: en
+  language: pt-br
   textDirection: ltr
 
 apps:
@@ -54,10 +54,10 @@ apps:
         index: true
 
     category:
-      isEnabled: true
+      isEnabled: false
       pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
       robots:
-        index: true
+        index: false
 
     tag:
       isEnabled: false
