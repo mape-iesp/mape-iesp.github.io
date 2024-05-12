@@ -24,86 +24,86 @@ const {
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
 
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
     {
-      testimonials &&
-        testimonials.map(({ title, name, job, twitter, email, linkedin, website, lattes, image }) => (
-          <div class="flex h-auto">
-            <div class="flex flex-col p-4 md:p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600">
-              {title && <h2 class="text-lg font-medium leading-6 pb-4">{title}</h2>}
-              {image && (
-                  <div class="h-15 w-15">
-                    {typeof image === 'string' ? (
-                      <Fragment set:html={image} />
-                    ) : (
-                      <Image
-                        class="h-10 w-10 rounded-lg min-w-full min-h-full border border-slate-100"
-                        width={200}
-                        height={200}
-                        widths={[500, 768]}
-                        layout="fixed"
-                        {...(image as any)}
-                      />
-                    )}
-                  </div>
-                )}
+        testimonials &&
+            testimonials.map(({ title, name, job, twitter, email, linkedin, website, lattes, image }) => (
+                <div class="flex h-auto">
+                    <div class="flex flex-col p-4 md:p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600">
+                        {title && <h2 class="text-lg font-medium leading-6 pb-4">{title}</h2>}
+                        {image && (
+                                <div class="h-15 w-15">
+                                    {typeof image === 'string' ? (
+                                        <Fragment set:html={image} />
+                                    ) : (
+                                        <Image
+                                            class="h-10 w-10 rounded-lg min-w-full min-h-full border border-slate-100"
+                                            width={200}
+                                            height={200}
+                                            widths={[500, 768]}
+                                            layout="fixed"
+                                            {...(image as any)}
+                                        />
+                                    )}
+                                </div>
+                            )}
 
-              <div class="border-slate-200 my-2" />
+                        <div class="border-slate-200 my-2" />
 
-              <div class="flex items-center">
-                <div class="grow ml-3 rtl:ml-0 rtl:mr-3">
-                  {name && <p class="text-base font-semibold">{name}</p>}
-                  {job && <p class="text-xs text-muted">{job}</p>}
+                        <div class="flex items-center justify-center">
+                            <div class="grow ml-3 rtl:ml-0 rtl:mr-3">
+                                {name && <p class="text-base font-semibold">{name}</p>}
+                                {job && <p class="text-xs text-muted">{job}</p>}
+                            </div>
+                        </div>
+
+                        <div class="flex-grow mt-2">
+                            
+                                    {email && 
+                                    <a
+                                    class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                                    href={email}
+                                    target="_blank">
+                                    <Icon name='tabler:mail-filled' class="w-6 h-6" />
+                                    </a>
+                                    } 
+                                    {website && 
+                                    <a
+                                    class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                                    href={website}
+                                    target="_blank">
+                                    <Icon name='tabler:link' class="w-6 h-6" />
+                                    </a>
+                                    } 
+                                    {lattes && 
+                                    <a
+                                    class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                                    href={lattes}
+                                    target="_blank">
+                                    <Icon name='tabler:file-cv' class="w-6 h-6" />
+                                    </a>
+                                    } 
+                                    {linkedin && 
+                                    <a
+                                    class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                                    href={linkedin}
+                                    target="_blank">
+                                    <Icon name='tabler:brand-linkedin' class="w-6 h-6" />
+                                    </a>
+                                    } 
+                                    {twitter && 
+                                    <a
+                                    class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                                    href={twitter}
+                                    target="_blank">
+                                    <Icon name='tabler:brand-x' class="w-6 h-6" />
+                                    </a>
+                                    } 
+                            </div>
+
+                    </div>
                 </div>
-              </div>
-
-              <div class="flex-grow mt-2">
-                
-                    {email && 
-                    <a
-                    class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-                    href={email}
-                    target="_blank">
-                    <Icon name='tabler:mail-filled' class="w-6 h-6" />
-                    </a>
-                    } 
-                    {website && 
-                    <a
-                    class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-                    href={website}
-                    target="_blank">
-                    <Icon name='tabler:link' class="w-6 h-6" />
-                    </a>
-                    } 
-                    {lattes && 
-                    <a
-                    class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-                    href={lattes}
-                    target="_blank">
-                    <Icon name='tabler:file-cv' class="w-6 h-6" />
-                    </a>
-                    } 
-                    {linkedin && 
-                    <a
-                    class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-                    href={linkedin}
-                    target="_blank">
-                    <Icon name='tabler:brand-linkedin' class="w-6 h-6" />
-                    </a>
-                    } 
-                    {twitter && 
-                    <a
-                    class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-                    href={twitter}
-                    target="_blank">
-                    <Icon name='tabler:brand-x' class="w-6 h-6" />
-                    </a>
-                    } 
-                </div>
-
-            </div>
-          </div>
-        ))
+            ))
     }
   </div>
   {

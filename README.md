@@ -18,4 +18,4 @@ Para compilar o site para produção, use `npm run build`:
 npm run build
 ```
 
-O site é gerado na pasta `dist/` e é servido automaticamente em produção usando [Github Actions](https://docs.github.com/pt/actions)
+O site é gerado na pasta `dist/` e é servido automaticamente em produção usando [Github Actions](https://docs.github.com/pt/actions).
