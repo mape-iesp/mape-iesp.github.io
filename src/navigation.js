@@ -118,8 +118,8 @@ export const footerData = {
           },
     ],
     socialLinks: [
-        { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-        { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
+        { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://twitter.com/mape_iesp' },
+        { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'http://instagram.com/mape.iesp' },
         { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
       ],
       footNote: `<p class="text-sm text-muted dark:text-gray-900">@2024 MAPE com base em <a class="underline dark:text-muted" href="https://onwidget.com/">onWidget</a>·</p>`,
