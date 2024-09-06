@@ -4,7 +4,7 @@ author: Olga Caldas
 title: O que dizem os candidatos e o que querem os eleitores? 
 excerpt: Uma análise do primeiro debate entre candidatos à prefeitura da cidade do Rio de Janeiro
 image: https://images.unsplash.com/photo-1561577553-674ce32847a4
-category: Notícias
+category: Análise
 tags:
   - Eleições 2024
   - Rio de Janeiro
