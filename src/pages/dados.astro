@@ -1,29 +1,49 @@
 ---
-import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
 
 const metadata = {
-  title: 'Ferramentas',
+  title: 'Dados',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
-  <Hero
-    id="grupo"
+  <!-- HeroText Widget ******************* -->
+  
+  <HeroText
     tagline="Dados"
-  >
-    <Fragment slot="title">
-    Bases de dados
-    </Fragment>
+    title="Dashboard de Municípios"
+    subtitle="Explore nossa ferramenta interativa para análise de dados municipais"
+  />
 
-    <Fragment slot="subtitle">
-     Em breve
-    </Fragment>
-    <Fragment slot="content">
-    <div class="-mb-32"></div>
-    </Fragment>
-  </Hero>
+  <!-- Streamlit App Embed ******************* -->
+  
+  <section class="relative not-prose">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-8">
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+        <iframe 
+          src="https://mape-municipios-dashboard.streamlit.app/?embed=true"
+          class="w-full"
+          style="height: 80vh; min-height: 600px; border: none;"
+          title="MAPE Dashboard de Municípios"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
+      </div>
+      
+      <div class="mt-6 text-center">
+        <p class="text-sm text-muted dark:text-gray-400">
+          Problemas para visualizar? 
+          <a 
+            href="https://mape-municipios-dashboard.streamlit.app/" 
+            target="_blank" 
+            class="text-primary hover:underline"
+          >
+            Acesse diretamente o dashboard
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
 
 </Layout>
