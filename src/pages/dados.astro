@@ -1,6 +1,8 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
 
 const metadata = {
   title: 'Dados',
@@ -11,21 +13,21 @@ const metadata = {
   <!-- HeroText Widget ******************* -->
   
   <HeroText
-    tagline="Dados"
-    title="Dashboard de Municípios"
+    tagline="Base de Dados"
+    title="mape_municipios"
     subtitle="Explore nossa ferramenta interativa para análise de dados municipais"
   />
 
   <!-- Streamlit App Embed ******************* -->
   
   <section class="relative not-prose">
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-8">
+    <div class="relative mx-auto px-4 sm:px-6 py-8">
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
         <iframe 
           src="https://mape-municipios-dashboard.streamlit.app/?embed=true"
           class="w-full"
           style="height: 80vh; min-height: 600px; border: none;"
-          title="MAPE Dashboard de Municípios"
+          title="mape_municipios"
           loading="lazy"
           allowfullscreen
         ></iframe>
@@ -45,5 +47,75 @@ const metadata = {
       </div>
     </div>
   </section>
+
+  <!-- O que é ? Section ******************* -->
+  
+  <Steps2
+    isReversed
+    title="O que é?"
+    subtitle='O <span class="text-accent font-bold dark:text-white highlight">mape_municipios</span> é um banco de informações dos municípios brasileiros que cobre 30 anos, 17 dimensões, 31 pesquisas e 451 variáveis. Seu objetivo é oferecer informações de maneira unificada e qualificada para pesquisadores(as), gestores(as) e sociedade civil, que embase boas pesquisas e boa tomada de decisão no campo das políticas públicas.'
+    items={[
+      {
+        title: 'Os dados',
+        description:
+          'O <span class="text-accent font-bold dark:text-white highlight">mape_municipios</span> reúne dados de diversas fontes oficiais, como IBGE, TSE, DATASUS, IPEA e outras, cobrindo desde indicadores socioeconômicos até informações sobre saúde e educação.',
+      },
+      {
+        title: 'Usos',
+        description: 
+          'A base de dados foi criada para facilitar pesquisas acadêmicas sobre política e eleições no Brasil, oferecendo dados prontos para análise, tratados seguindo práticas canônicas nas Ciências Sociais, Economia e Demografia.',
+      },
+      {
+        title: 'Harmonização',
+        description:
+          'Todos os dados são harmonizados e padronizados, permitindo análises consistentes ao longo do tempo e entre diferentes fontes.',
+      },
+    ]}
+  >
+  </Steps2>
+
+  <!-- OSF Documentation Section ******************* -->
+  
+  <Content
+    tagline="Repositório"
+    title="Base e Documentação"
+    callToAction={{
+      variant: 'primary',
+      text: 'Acessar o banco completo',
+      href: 'https://osf.io/3yka9/',
+      target: '_blank',
+      icon: 'tabler:external-link'
+    }}
+    items={[
+      {
+        title: 'Metodologia detalhada',
+        description:
+          'Acesse informações completas sobre como os dados foram coletados, processados e organizados.',
+      },
+      {
+        title: 'Dicionário de variáveis',
+        description: 
+          'Encontre descrições detalhadas de todas as variáveis disponíveis na base de dados.',
+      },
+      {
+        title: 'Exemplos de uso',
+        description:
+          'Veja exemplos práticos de como utilizar os dados em suas pesquisas.',
+      },
+      
+    ]}
+
+    image={{
+      src: '~/assets/images/data.png',
+      alt: 'Data | Unsplash',
+      url: 'https://images.unsplash.com/photo-1434626881859-194d67b2b86f',
+    }}
+
+    isReversed
+  >
+    <Fragment slot="bg">
+        <div class="absolute inset-0 bg-[#F8F9F6]"></div>
+    </Fragment>
+  </Content>
 
 </Layout>

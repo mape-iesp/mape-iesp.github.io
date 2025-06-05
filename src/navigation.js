@@ -62,7 +62,7 @@ export const headerData = {
           href: getPermalink('ferramentas'),
         },
         {
-          text: 'Dados',
+          text: 'mape_municipios',
           href: getPermalink('dados'),
         },
       ],
