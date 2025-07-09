@@ -1,0 +1,409 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import { getCollection } from 'astro:content';
+
+const metadata = {
+  title: 'OQF - O Que Funciona',
+};
+
+// Get the OQF data
+const oqfData = await getCollection('oqf');
+const data = oqfData[0]?.data;
+
+if (!data) {
+  throw new Error('OQF data not found');
+}
+
+const { title, subtitle, categories, interventions } = data;
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <HeroText
+    tagline="Avaliação de políticas públicas"
+    title={title}
+    subtitle={subtitle}
+  />
+
+  <!-- Filter and Table Section -->
+  <section class="relative not-prose">
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 py-8">
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+        
+        <!-- Filters -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Filtros</h3>
+          
+          <div class="flex flex-wrap gap-4 mb-4">
+            <!-- Category Filter -->
+            <div class="relative">
+              <select 
+                id="category-filter" 
+                class="appearance-none bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md px-4 py-2 pr-8 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              >
+                <option value="">Selecione uma categoria</option>
+                {categories.map((category) => (
+                  <option value={category}>{category}</option>
+                ))}
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-200">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Search -->
+            <div class="flex-1 max-w-md">
+              <input 
+                type="text" 
+                id="search-input"
+                placeholder="Buscar por intervenção"
+                class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+            </div>
+          </div>
+
+          <div class="flex gap-2">
+            <button 
+              id="apply-filters"
+              class="px-4 py-2 bg-secondary text-white rounded-md hover:bg-primary-dark transition-colors"
+            >
+              Aplicar
+            </button>
+            <button 
+              id="clear-filters"
+              class="px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-200 rounded-md hover:bg-gray-300 dark:hover:bg-gray-500 transition-colors"
+            >
+              Limpar tudo
+            </button>
+          </div>
+        </div>
+
+        <!-- Interventions Table -->
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse">
+            <thead>
+              <tr class="bg-secondary text-white">
+                <th class="text-left p-4 font-semibold">Intervenção</th>
+                <th class="text-left p-4 font-semibold">Efeito</th>
+                <th class="text-left p-4 font-semibold">Implementação</th>
+                <th class="text-left p-4 font-semibold">Custo</th>
+              </tr>
+            </thead>
+            <tbody id="interventions-table">
+              {interventions.map((intervention, index) => (
+                <tr class="intervention-row border-b border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700" data-category={intervention.category}>
+                  <td class="p-4">
+                    <button 
+                      class="text-left w-full hover:text-primary transition-colors intervention-toggle"
+                      data-index={index}
+                    >
+                      {intervention.name}
+                    </button>
+                    <div class="intervention-detail hidden mt-2 p-3 bg-gray-50 dark:bg-gray-600 rounded text-sm text-gray-700 dark:text-gray-200">
+                      <p class="mb-3">{intervention.summary}</p>
+                      {intervention.studyLink && (
+                        <a 
+                          href={intervention.studyLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="inline-flex items-center gap-2 text-primary hover:text-primary-dark transition-colors"
+                        >
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                          </svg>
+                          Acesse o estudo completo
+                        </a>
+                      )}
+                    </div>
+                  </td>
+                  <td class="p-4">
+                    <div class="flex items-center gap-2">
+                      <div class="flex items-center">
+                        {intervention.effect === 'positivo' && (
+                          <div class="w-4 h-4 rounded-full bg-green-500"></div>
+                        )}
+                        {intervention.effect === 'positivo-moderado' && (
+                          <div class="w-4 h-4 rounded-full bg-green-300"></div>
+                        )}
+                        {intervention.effect === 'indeterminado' && (
+                          <div class="w-4 h-4 rounded-full bg-gray-400"></div>
+                        )}
+                        {intervention.effect === 'negativo-moderado' && (
+                          <div class="w-4 h-4 rounded-full bg-red-300"></div>
+                        )}
+                        {intervention.effect === 'negativo' && (
+                          <div class="w-4 h-4 rounded-full bg-red-500"></div>
+                        )}
+                      </div>
+                      <div>
+                        <div class="font-medium text-gray-900 dark:text-white">
+                          {intervention.effect === 'positivo' && 'Positivo'}
+                          {intervention.effect === 'positivo-moderado' && 'Positivo e moderado'}
+                          {intervention.effect === 'indeterminado' && 'Indeterminado ou neutro'}
+                          {intervention.effect === 'negativo-moderado' && 'Negativo e moderado'}
+                          {intervention.effect === 'negativo' && 'Negativo'}
+                        </div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">
+                          {intervention.effectDescription}
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="p-4">
+                    <div class="flex items-center gap-2">
+                      <div class="flex items-center">
+                        {intervention.implementationComplexity === 'simples' && (
+                          <div class="w-4 h-4 rounded-full bg-green-500"></div>
+                        )}
+                        {intervention.implementationComplexity === 'moderada' && (
+                          <div class="w-4 h-4 rounded-full bg-yellow-500"></div>
+                        )}
+                        {intervention.implementationComplexity === 'complexa' && (
+                          <div class="w-4 h-4 rounded-full bg-red-500"></div>
+                        )}
+                      </div>
+                      <div>
+                        <div class="font-medium text-gray-900 dark:text-white capitalize">
+                          {intervention.implementationComplexity}
+                        </div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">
+                          {intervention.implementation}
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="p-4">
+                    <div class="flex items-center gap-2">
+                      <div class="flex gap-1">
+                        {/* Cost indicators */}
+                        {intervention.cost === 'muito-baixo' && (
+                          <>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
+                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
+                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
+                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
+                          </>
+                        )}
+                        {intervention.cost === 'baixo' && (
+                          <>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
+                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
+                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
+                          </>
+                        )}
+                        {intervention.cost === 'medio' && (
+                          <>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
+                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
+                          </>
+                        )}
+                        {intervention.cost === 'alto' && (
+                          <>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
+                          </>
+                        )}
+                        {intervention.cost === 'muito-alto' && (
+                          <>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                          </>
+                        )}
+                      </div>
+                      <span class="text-sm text-gray-600 dark:text-gray-300 capitalize">
+                        {intervention.cost === 'muito-baixo' && 'Muito baixo'}
+                        {intervention.cost === 'baixo' && 'Baixo'}
+                        {intervention.cost === 'medio' && 'Médio'}
+                        {intervention.cost === 'alto' && 'Alto'}
+                        {intervention.cost === 'muito-alto' && 'Muito alto'}
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* No results message */}
+        <div id="no-results" class="hidden text-center py-8 text-gray-500 dark:text-gray-400">
+          Nenhuma intervenção encontrada com os filtros aplicados.
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Information Sections -->
+  <section class="relative not-prose">
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 py-12">
+      
+      <!-- O que é? -->
+      <div class="mb-12">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">O que é?</h2>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            O <span class="text-accent font-bold">OQF</span> é um <span class="italic">hub</span> de evidências que, como outros no Brasil e no mundo, visa melhorar a forma como governos e outras organizações do setor privado e da sociedade civil criam, partilham e utilizam evidências de alta qualidade na tomada de decisões.</p> <br>
+            
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            A partir de um sólido conhecimento teórico e metodológico, sistematizamos evidências em diversas áreas de políticas públicas para determinar quais tipos de intervenções são mais eficientes em termos de resultados, e como podemos responder questões candentes no debate público. 
+          </p> <br>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            Essas evidências são agregadas e produzidas a partir de revisões sistemáticas da literatura científica. Seguindo boas práticas nacionais e internacionais, sistematizamos trabalhos acadêmicos (sejam artigos, teses, dissertações ou outras revisões de literatura) que analisam a escala do efeito (se positivo, negativo ou misto); sua força (nível de impacto); qual o mecanismo que possibilita o resultado (como algo funciona); se há moderadores (quando e porquê algo funciona); a implementação (como fazer); as percepções dos stakeholders em relação à política; e os custos envolvidos no tipo de intervenção.
+            </p> <br>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            A <span class="italic">toolkit</span> (ou caixa de ferramentas) de avaliação de políticas públicas que usamos têm os seguintes itens:
+            </p><br>
+            <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300">
+              <li><strong>Escala do efeito</strong> - Efeito positivo, misto ou negativo sobre o resultado.</li>
+              <li><strong>Força do efeito</strong> - Força do efeito a partir da evidência disponível.</li>
+              <li><strong>Mecanismo (como funciona?)</strong> - Como a política (X) se liga ao seu efeito (Y).</li>
+              <li><strong>Moderador (onde, quando e com quem funciona?</strong> - Contexto de funcionamento (ou não) da política.</li>
+              <li><strong>Implementação (como fazer?)</strong> - Como se dá a implementação em casos bem-sucedidos.</li>
+              <li><strong>Percepção (como os stakeholders interpretam a política?)</strong> - Sentido atribuído à intervenção por beneficiários, gestores e/ou implementadores. </li>
+              <li><strong>Custo (quanto custa?)</strong> - Custo da política pública e seu benefício.</li>
+            </ul>
+
+        </div>
+      </div>
+
+      <!-- Como fazemos? -->
+      <div class="mb-12">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Como fazemos?</h2>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            Avaliar se uma política pública funcionou ou não é uma atividade que requer uma metodologia própria. Quando pensamos em efetividade, efeito ou impacto dialogamos com o conceito de causalidade e suas implicações. Por exemplo: como é possível isolar o efeito de X (a política) sobre Y (o resultado)? Em termos contrafactuais, o que teria ocorrido com Y caso X não tivesse ocorrido? Além disso, outras questões são relevantes, por exemplo: Como a política funciona? Por que (não) funciona? Em que contextos o impacto é maior? Qual a percepção de beneficiários, gestores ou implementadores (<span class="italic">stakeholders</span> da política)? Para dar conta dessas diferentes perguntas, avaliamos políticas através da literatura, com o uso de <span class="italic">revisão sistemática</span> (<span class="text-accent font-bold">RS</span>). 
+          </p><br>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            Em linhas gerais, a <span class="text-accent font-bold">RS</span> se caracteriza como um método de localizar, selecionar, sintetizar e analisar evidências. O “sistemático” na <span class="text-accent font-bold">RS</span> provém da adoção de um protocolo <span class="italic">ex ante</span> para cada uma dessas etapas, de modo que o processo seja reproduzível e replicável. Há dois benefícios nesta escolha: por um lado, diminui os vieses no processo de escolha de trabalhos que serão lidos e analisados e, por outro, incrementa a transparência da pesquisa. 
+          </p><br>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            O uso de <span class="text-accent font-bold">RS</span> para avaliação, usualmente, segue uma escala: desde perguntas mais amplas (focadas no problema), até perguntas mais restritas (focadas na política/intervenção). Na área de educação, por exemplo, uma pergunta mais ampla é: “o que funciona para melhorar o desempenho dos/as estudantes?” (1); enquanto uma pergunta mais específica é: “o incremento salarial de professores por meta alcançada melhora o desempenho dos/as estudantes?” (2). No meio do caminho, há ainda a possibilidade de avaliação de uma intervenção específica (incremento salarial de professores) sobre uma série de outcomes (resultados) distintos: “quais os impactos do incremento salarial de professores” (3)? Nossa proposta é melhor indicada para responder questões como 2 e 3, dado que o foco principal da busca, filtragem, sistematização e análise está na intervenção/política pública (X). 
+          </p><br>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            Partimos de metodologia própria de revisão sistemática para avaliação sistemática (disponível aqui), bem como integramos revisões já realizadas sobre intervenções em diferentes áreas temáticas (Meio-Ambiente, Economia, Sociedade, Finanças, Recursos Humanos, Assistência Social e Direitos Humanos, Energia e Internet, Educação, Saúde, Transporte, Habitação e Zoneamento, Segurança e Corrupção e Transparência). Um de nossos diferenciais é a agregação, em formato sequencial, de evidências quantitativas e qualitativas. 
+            </p><br>
+        </div>
+      </div>
+
+      <!-- Por que fazemos? -->
+      <div class="mb-12">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Por que fazemos?</h2>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            Um dos grandes desafios para o uso de avaliações no processo de formulação e tomada de decisão em políticas é o acesso, em formato acessível, dos achados de trabalhos acadêmicos. 
+            </p><br>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            Estratégias de divulgação e disseminação de seus achados, especialmente no caso de políticas públicas, devem ser pensadas com cuidado, para que possam ser úteis ao processo de avaliação e implementação de políticas. A literatura aponta alguns fatores importantes para disseminação efetiva de achados: (i) a questão abordada é relevante socialmente/politicamente; há clareza na mensagem; (ii) o conteúdo é acessível (mesmo que o produto final seja um artigo, esse material vem acompanhado de, por exemplo, um resumo executivo); (iii) a divulgação se dá em relação com tomadores de decisão; e (iv) há um balanceamento entre a rapidez da produção e a qualidade dos resultados. 
+ 
+            </p><br>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            A literatura sobre uso de evidências em políticas públicas ressalta a importância da comunicação clara – especialmente em termos de custos e benefícios das políticas – para que pesquisas sejam incorporadas ao processo de decisão. 
+            </p><br>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            Com isso em mente, o <span class="text-accent font-bold">OQF</span> é um <span class="italic">hub</span> de evidências em formato acessível, com recursos gráficos e textos curtos. 
+            </p><br>
+        </div>
+      </div>
+
+      <!-- Apoios -->
+      <div class="mb-12">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Apoios</h2>
+          <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300">
+              <li>IESP-UERJ</li>
+              <li>Assembléia Legislativa do Rio de Janeiro (ALERJ)</li>
+            </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- JavaScript for interactivity -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function() {
+      const categoryFilter = document.getElementById('category-filter');
+      const searchInput = document.getElementById('search-input');
+      const applyBtn = document.getElementById('apply-filters');
+      const clearBtn = document.getElementById('clear-filters');
+      const interventionRows = document.querySelectorAll('.intervention-row');
+      const interventionToggles = document.querySelectorAll('.intervention-toggle');
+      const noResults = document.getElementById('no-results');
+
+      // Toggle intervention details
+      interventionToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+          const detail = this.parentNode?.querySelector('.intervention-detail');
+          if (detail) {
+            detail.classList.toggle('hidden');
+          }
+        });
+      });
+
+      // Filter functionality
+      function applyFilters() {
+        if (!categoryFilter || !searchInput || !noResults) return;
+        
+        const categoryValue = categoryFilter.value.toLowerCase();
+        const searchValue = searchInput.value.toLowerCase();
+        let visibleCount = 0;
+
+        interventionRows.forEach(row => {
+          const category = row.getAttribute('data-category')?.toLowerCase() || '';
+          const text = row.textContent?.toLowerCase() || '';
+          
+          const categoryMatch = !categoryValue || category.includes(categoryValue);
+          const searchMatch = !searchValue || text.includes(searchValue);
+          
+          if (categoryMatch && searchMatch) {
+            row.style.display = '';
+            visibleCount++;
+          } else {
+            row.style.display = 'none';
+          }
+        });
+
+        // Show/hide no results message
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      }
+
+      function clearFilters() {
+        if (!categoryFilter || !searchInput || !noResults) return;
+        
+        categoryFilter.value = '';
+        searchInput.value = '';
+        interventionRows.forEach(row => {
+          row.style.display = '';
+        });
+        noResults.classList.add('hidden');
+      }
+
+      // Event listeners with null checks
+      if (applyBtn) applyBtn.addEventListener('click', applyFilters);
+      if (clearBtn) clearBtn.addEventListener('click', clearFilters);
+      if (searchInput) searchInput.addEventListener('input', applyFilters);
+      if (categoryFilter) categoryFilter.addEventListener('change', applyFilters);
+    });
+  </script>
+
+</Layout>

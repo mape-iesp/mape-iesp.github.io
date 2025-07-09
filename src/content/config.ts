@@ -63,6 +63,27 @@ const postCollection = defineCollection({
   }),
 });
 
+const oqfCollection = defineCollection({
+  type: 'data',
+  schema: z.object({
+    title: z.string(),
+    subtitle: z.string().optional(),
+    categories: z.array(z.string()),
+    interventions: z.array(z.object({
+      name: z.string(),
+      category: z.string(),
+      effect: z.enum(['positivo', 'positivo-moderado', 'indeterminado', 'negativo-moderado', 'negativo']),
+      effectDescription: z.string(),
+      implementation: z.string(),
+      implementationComplexity: z.enum(['simples', 'moderada', 'complexa']),
+      cost: z.enum(['muito-baixo', 'baixo', 'medio', 'alto', 'muito-alto']),
+      summary: z.string(),
+      studyLink: z.string().url().optional(),
+    })),
+  }),
+});
+
 export const collections = {
   post: postCollection,
+  oqf: oqfCollection,
 };

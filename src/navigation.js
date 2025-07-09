@@ -58,14 +58,14 @@ export const headerData = {
       text: 'Utilidades',
       links: [
         {
-          text: 'Ferramentas',
-          href: getPermalink('ferramentas'),
-        },
-        {
           text: 'mape_municipios',
           href: getPermalink('dados'),
         },
       ],
+    },
+    {
+      text: 'OQF',
+      href: getPermalink('oqf'),
     },
     {
         text: 'Blog',
@@ -95,6 +95,7 @@ export const footerData = {
         {
             title: 'Utilidades',
             links: [
+              { text: 'OQF - O Que Funciona', href: getPermalink('oqf')},
               { text: 'Ferramentas', href: getPermalink('ferramentas')},
               { text: 'Dados', href: getPermalink('dados')},
             ],
