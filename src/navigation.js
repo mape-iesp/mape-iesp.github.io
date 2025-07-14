@@ -63,10 +63,10 @@ export const headerData = {
         },
       ],
     },
-    // {
-    //   text: 'OQF',
-    //   href: getPermalink('oqf'),
-    // },
+     {
+       text: 'OQF',
+       href: getPermalink('oqf'),
+     },
     {
         text: 'Blog',
         href: getPermalink('blog'),
