@@ -55,7 +55,7 @@ const { title, subtitle, categories, interventions } = data;
             </div>
 
             <!-- Search -->
-            <div class="flex-1 max-w-md">
+            <div class="flex-1 max-w-md mb-4">
               <input 
                 type="text" 
                 id="search-input"
@@ -64,22 +64,6 @@ const { title, subtitle, categories, interventions } = data;
               />
             </div>
           </div>
-
-          <div class="flex gap-2">
-            <button 
-              id="apply-filters"
-              class="px-4 py-2 bg-secondary text-white rounded-md hover:bg-primary-dark transition-colors"
-            >
-              Aplicar
-            </button>
-            <button 
-              id="clear-filters"
-              class="px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-200 rounded-md hover:bg-gray-300 dark:hover:bg-gray-500 transition-colors"
-            >
-              Limpar tudo
-            </button>
-          </div>
-        </div>
 
         <!-- Interventions Table -->
         <div class="overflow-x-auto">
