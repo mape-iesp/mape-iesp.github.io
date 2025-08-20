@@ -117,7 +117,7 @@ graf_linha_desastres <- base_desastres |>
 graf_linha_desastres
 ```
 
-![](../desastres/unnamed-chunk-1-1.png)
+![](../content/post/desastres//unnamed-chunk-1-1.png)
 
 ### Variação temporal de prejuízos registrados
 
@@ -147,7 +147,7 @@ graf_linha_danos <- base_desastres |>
 graf_linha_danos
 ```
 
-![](../desastres/unnamed-chunk-2-1.png)
+![](../content/post/desastres//unnamed-chunk-2-1.png)
 
 ### Variação temporal de pessoas afetadas
 
@@ -175,7 +175,7 @@ graf_linha_pessoas <- base_desastres |>
 graf_linha_pessoas
 ```
 
-![](../desastres/unnamed-chunk-3-1.png)
+![](../content/post/desastres//unnamed-chunk-3-1.png)
 
 ### Correlações
 
@@ -199,7 +199,7 @@ base_desastres %>%
   theme_minimal()
 ```
 
-![](../desastres/unnamed-chunk-4-1.png)
+![](../content/post/desastres//unnamed-chunk-4-1.png)
 
 ## Distribuição ao longo do espaço
 
@@ -252,7 +252,7 @@ br_desastres <- ggplot() +
 br_desastres
 ```
 
-![](../desastres/unnamed-chunk-6-1.png)
+![](../content/post/desastres//unnamed-chunk-6-1.png)
 
 ### Total prejuízos
 
@@ -270,7 +270,7 @@ br_prejuizos <- ggplot() +
 br_prejuizos
 ```
 
-![](../desastres/unnamed-chunk-7-1.png)
+![](../content/post/desastres//unnamed-chunk-7-1.png)
 
 ### Total pessoas afetadas
 
@@ -290,7 +290,7 @@ br_pessoas <- ggplot() +
 br_pessoas
 ```
 
-![](../desastres/unnamed-chunk-8-1.png)
+![](../content/post/desastres//unnamed-chunk-8-1.png)
 
 Como se pode notar pelos três mapas, há diferenças entre a incidência de desastres (acumulados ao longo da série temporal), o total de pessoas afetadas e prejuízos.
 
@@ -339,7 +339,7 @@ corrplot(correlacao_resultado, method = "color",
          col = colorRampPalette(c("red", "white", "blue"))(200))  # cores da correlação
 ```
 
-![](../desastres/unnamed-chunk-9-1.png)
+![](../content/post/desastres//unnamed-chunk-9-1.png)
 
 # Considerações Finais
 
