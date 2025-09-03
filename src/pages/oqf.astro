@@ -88,6 +88,18 @@ const { title, subtitle, categories, interventions } = data;
                     </button>
                     <div class="intervention-detail hidden mt-2 p-3 bg-gray-50 dark:bg-gray-600 rounded text-sm text-gray-700 dark:text-gray-200">
                       <p class="mb-3">{intervention.summary}</p>
+                      
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+                        <div>
+                          <span class="font-semibold">Autores:</span>
+                          <span class="ml-1">{intervention.author}</span>
+                        </div>
+                        <div>
+                          <span class="font-semibold">Tipo:</span>
+                          <span class="ml-1">{intervention.tipo}</span>
+                        </div>
+                      </div>
+                      
                       {intervention.studyLink && (
                         <a 
                           href={intervention.studyLink}

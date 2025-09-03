@@ -78,6 +78,8 @@ const oqfCollection = defineCollection({
       implementationComplexity: z.enum(['simples', 'moderada', 'complexa']),
       cost: z.enum(['muito-baixo', 'baixo', 'medio', 'alto', 'muito-alto']),
       summary: z.string(),
+      author: z.string(),
+      tipo: z.enum(['Revisão original', 'Meta-revisão']),
       studyLink: z.string().url().optional(),
     })),
   }),
