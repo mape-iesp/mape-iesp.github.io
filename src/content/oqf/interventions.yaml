@@ -1,5 +1,5 @@
 title: "O Que Funciona"
-subtitle: "O OQF é um hub de evidências que visa melhorar a forma como governos e outras organizações criam, partilham e usam evidências em suas tomadas de decisão. Clique na intervenção específica para encontrar mais detalhes incluindo como e onde funciona, custos e como implementá-la."
+subtitle: "O <span class='text-accent font-bold'>OQF</span> é um hub de evidências que visa melhorar a forma como governos e outras organizações criam, partilham e usam evidências em suas tomadas de decisão. Clique na intervenção específica para encontrar mais detalhes incluindo como e onde funciona, custos e como implementá-la"
 
 categories:
   - "Educação"
@@ -30,15 +30,6 @@ interventions:
     title: "A proibição de celulares nas escolas/salas de aula melhora o desempenho acadêmico dos estudantes?"
     reviewDate: "14/7/2025"
     studyLink: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5350646"
-
-  - status: "Revisão original"
-    name: "Políticas de combate a desinformação"
-    resultado: "Sem informação"
-    effectDirection: "neutro"
-    effectStrength: "indeterminado"
-    implementationComplexity: "nao-informado"
-    costLevel: "sem-informacao"
-    summary: "Informações em atualização."
 
   - status: "Revisão original"
     name: "Políticas habitacionais"
