@@ -63,25 +63,36 @@ const postCollection = defineCollection({
   }),
 });
 
+const effectDirectionEnum = z.enum(['positivo', 'negativo', 'neutro']);
+const effectStrengthEnum = z.enum(['fraco', 'moderado', 'forte', 'indeterminado']);
+const implementationComplexityEnum = z.enum(['simples', 'moderada', 'complexa', 'nao-informado']);
+const costLevelEnum = z.enum(['baixo', 'medio', 'alto', 'sem-informacao', 'variavel']);
+
 const oqfCollection = defineCollection({
   type: 'data',
   schema: z.object({
     title: z.string(),
     subtitle: z.string().optional(),
     categories: z.array(z.string()),
-    interventions: z.array(z.object({
-      name: z.string(),
-      category: z.string(),
-      effect: z.enum(['positivo', 'positivo-moderado', 'indeterminado', 'negativo-moderado', 'negativo']),
-      effectDescription: z.string(),
-      implementation: z.string(),
-      implementationComplexity: z.enum(['simples', 'moderada', 'complexa']),
-      cost: z.enum(['muito-baixo', 'baixo', 'medio', 'alto', 'muito-alto']),
-      summary: z.string(),
-      author: z.string(),
-      tipo: z.enum(['Revisão original', 'Meta-revisão']),
-      studyLink: z.string().url().optional(),
-    })),
+    interventions: z.array(
+      z.object({
+        status: z.string(),
+        name: z.string(),
+        resultado: z.string(),
+        effectDirection: effectDirectionEnum,
+        effectStrength: effectStrengthEnum,
+        implementationComplexity: implementationComplexityEnum.optional(),
+        implementationNotes: z.string().optional(),
+        costLevel: costLevelEnum,
+        costDescription: z.string().optional(),
+        summary: z.string().optional(),
+        dimensions: z.array(z.string()).optional(),
+        authors: z.string().optional(),
+        title: z.string().optional(),
+        reviewDate: z.string().optional(),
+        studyLink: z.string().url().optional(),
+      })
+    ),
   }),
 });
 

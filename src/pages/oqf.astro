@@ -16,6 +16,107 @@ if (!data) {
 }
 
 const { title, subtitle, categories, interventions } = data;
+
+const effectBaseLabels = {
+  positivo: 'Positivo',
+  negativo: 'Negativo',
+  neutro: 'Neutro',
+} as const;
+
+const effectStrengthLabels = {
+  fraco: 'fraco',
+  moderado: 'moderado',
+  forte: 'forte',
+  indeterminado: '',
+} as const;
+
+const effectCirclePalette = {
+  positivo: {
+    fraco: 'bg-emerald-300',
+    moderado: 'bg-emerald-500',
+    forte: 'bg-emerald-700',
+    indeterminado: 'bg-emerald-400',
+  },
+  negativo: {
+    fraco: 'bg-rose-300',
+    moderado: 'bg-rose-500',
+    forte: 'bg-rose-700',
+    indeterminado: 'bg-rose-400',
+  },
+  neutro: {
+    fraco: 'bg-slate-400',
+    moderado: 'bg-slate-500',
+    forte: 'bg-slate-600',
+    indeterminado: 'bg-slate-400',
+  },
+} as const;
+
+const defaultEffectCircle = 'bg-slate-400';
+
+const indicatorBaseClass = 'mt-1 flex-none h-4 w-4 rounded-full';
+
+const getEffectLabel = (direction: string, strength: string) => {
+  const base = effectBaseLabels[direction as keyof typeof effectBaseLabels] ?? 'Indeterminado';
+  if (direction === 'neutro' || strength === 'indeterminado') {
+    return base;
+  }
+  const strengthLabel = effectStrengthLabels[strength as keyof typeof effectStrengthLabels];
+  return strengthLabel ? `${base} ${strengthLabel}` : base;
+};
+
+const getEffectCircleClass = (direction: string, strength: string) => {
+  const palette = effectCirclePalette[direction as keyof typeof effectCirclePalette];
+  if (palette) {
+    return palette[strength as keyof typeof effectStrengthLabels] ?? defaultEffectCircle;
+  }
+  return defaultEffectCircle;
+};
+
+const complexityLabels = {
+  simples: 'Simples',
+  moderada: 'Moderada',
+  complexa: 'Complexa',
+  'nao-informado': 'Sem informação',
+} as const;
+
+const complexityCirclePalette = {
+  simples: 'bg-emerald-400',
+  moderada: 'bg-amber-500',
+  complexa: 'bg-rose-500',
+  'nao-informado': 'bg-slate-400',
+} as const;
+
+const getComplexityLabel = (value?: string) =>
+  complexityLabels[value as keyof typeof complexityLabels] ?? 'Sem informação';
+
+const getComplexityCircleClass = (value?: string) =>
+  complexityCirclePalette[value as keyof typeof complexityCirclePalette] ?? 'bg-slate-400';
+
+const costLabels = {
+  baixo: 'Baixo',
+  medio: 'Médio',
+  alto: 'Alto',
+  'sem-informacao': 'Sem informação',
+  variavel: 'Variável',
+} as const;
+
+const costCirclePalette = {
+  baixo: 'bg-emerald-400',
+  medio: 'bg-amber-500',
+  alto: 'bg-rose-600',
+  'sem-informacao': 'bg-slate-400',
+  variavel: 'bg-sky-500',
+} as const;
+
+const getCostLabel = (value: string) => costLabels[value as keyof typeof costLabels] ?? 'Sem informação';
+
+const getCostCircleClass = (value: string) =>
+  costCirclePalette[value as keyof typeof costCirclePalette] ?? 'bg-slate-400';
+
+const formatDimensions = (items?: string[]) =>
+  items && items.length > 0 ? items.join(', ') : 'Sem informação';
+
+const hasText = (value?: string) => Boolean(value && value.trim().length > 0);
 ---
 
 <Layout metadata={metadata}>
@@ -64,13 +165,15 @@ const { title, subtitle, categories, interventions } = data;
               />
             </div>
           </div>
+        </div>
 
         <!-- Interventions Table -->
         <div class="overflow-x-auto">
-          <table class="w-full border-collapse">
+          <table class="w-full border-collapse min-w-[720px]">
             <thead>
               <tr class="bg-secondary text-white">
                 <th class="text-left p-4 font-semibold">Intervenção</th>
+                <th class="text-left p-4 font-semibold">Resultado</th>
                 <th class="text-left p-4 font-semibold">Efeito</th>
                 <th class="text-left p-4 font-semibold">Implementação</th>
                 <th class="text-left p-4 font-semibold">Custo</th>
@@ -78,159 +181,166 @@ const { title, subtitle, categories, interventions } = data;
             </thead>
             <tbody id="interventions-table">
               {interventions.map((intervention, index) => (
-                <tr class="intervention-row border-b border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700" data-category={intervention.category}>
-                  <td class="p-4">
-                    <button 
-                      class="text-left w-full hover:text-primary transition-colors intervention-toggle"
-                      data-index={index}
-                    >
-                      {intervention.name}
-                    </button>
-                    <div class="intervention-detail hidden mt-2 p-3 bg-gray-50 dark:bg-gray-600 rounded text-sm text-gray-700 dark:text-gray-200">
-                      <p class="mb-3">{intervention.summary}</p>
-                      
-                      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+                <>
+                  <tr
+                    class="intervention-row border-b border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700"
+                    data-dimensions={(intervention.dimensions ?? []).join('|')}
+                    data-index={index}
+                  >
+                    <td class="p-4 align-top">
+                      <button
+                        class="text-left w-full hover:text-primary transition-colors intervention-toggle"
+                        data-index={index}
+                        aria-expanded="false"
+                      >
+                        {intervention.name}
+                      </button>
+                    </td>
+                    <td class="p-4 align-top">
+                      <div class="text-gray-900 dark:text-white font-normal">
+                        {intervention.resultado}
+                      </div>
+                    </td>
+                    <td class="p-4 align-top">
+                      <div class="flex items-start gap-3">
+                        <span
+                          class={`${indicatorBaseClass} ${getEffectCircleClass(
+                            intervention.effectDirection,
+                            intervention.effectStrength
+                          )}`}
+                          aria-hidden="true"
+                        ></span>
                         <div>
-                          <span class="font-semibold">Autores:</span>
-                          <span class="ml-1">{intervention.author}</span>
+                          <div class="font-normal text-gray-900 dark:text-white">
+                            {getEffectLabel(intervention.effectDirection, intervention.effectStrength)}
+                          </div>
                         </div>
+                      </div>
+                    </td>
+                    <td class="p-4 align-top">
+                      <div class="flex items-start gap-3">
+                        <span
+                          class={`${indicatorBaseClass} ${getComplexityCircleClass(
+                            intervention.implementationComplexity
+                          )}`}
+                          aria-hidden="true"
+                        ></span>
                         <div>
-                          <span class="font-semibold">Tipo:</span>
-                          <span class="ml-1">{intervention.tipo}</span>
+                          <div class="font-normal text-gray-900 dark:text-white">
+                            {getComplexityLabel(intervention.implementationComplexity)}
+                          </div>
                         </div>
                       </div>
-                      
-                      {intervention.studyLink && (
-                        <a 
-                          href={intervention.studyLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="inline-flex items-center gap-2 text-primary hover:text-primary-dark transition-colors"
-                        >
-                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                          </svg>
-                          Acesse o estudo completo
-                        </a>
-                      )}
-                    </div>
-                  </td>
-                  <td class="p-4">
-                    <div class="flex items-center gap-2">
-                      <div class="flex items-center">
-                        {intervention.effect === 'positivo' && (
-                          <div class="w-4 h-4 rounded-full bg-green-500"></div>
-                        )}
-                        {intervention.effect === 'positivo-moderado' && (
-                          <div class="w-4 h-4 rounded-full bg-green-300"></div>
-                        )}
-                        {intervention.effect === 'indeterminado' && (
-                          <div class="w-4 h-4 rounded-full bg-gray-400"></div>
-                        )}
-                        {intervention.effect === 'negativo-moderado' && (
-                          <div class="w-4 h-4 rounded-full bg-red-300"></div>
-                        )}
-                        {intervention.effect === 'negativo' && (
-                          <div class="w-4 h-4 rounded-full bg-red-500"></div>
-                        )}
-                      </div>
-                      <div>
-                        <div class="font-medium text-gray-900 dark:text-white">
-                          {intervention.effect === 'positivo' && 'Positivo'}
-                          {intervention.effect === 'positivo-moderado' && 'Positivo e moderado'}
-                          {intervention.effect === 'indeterminado' && 'Indeterminado ou neutro'}
-                          {intervention.effect === 'negativo-moderado' && 'Negativo e moderado'}
-                          {intervention.effect === 'negativo' && 'Negativo'}
-                        </div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400">
-                          {intervention.effectDescription}
+                    </td>
+                    <td class="p-4 align-top">
+                      <div class="flex items-start gap-3">
+                        <span
+                          class={`${indicatorBaseClass} ${getCostCircleClass(intervention.costLevel)}`}
+                          aria-hidden="true"
+                        ></span>
+                        <div>
+                          <div class="font-normal text-gray-900 dark:text-white">
+                            {getCostLabel(intervention.costLevel)}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td class="p-4">
-                    <div class="flex items-center gap-2">
-                      <div class="flex items-center">
-                        {intervention.implementationComplexity === 'simples' && (
-                          <div class="w-4 h-4 rounded-full bg-green-500"></div>
-                        )}
-                        {intervention.implementationComplexity === 'moderada' && (
-                          <div class="w-4 h-4 rounded-full bg-yellow-500"></div>
-                        )}
-                        {intervention.implementationComplexity === 'complexa' && (
-                          <div class="w-4 h-4 rounded-full bg-red-500"></div>
-                        )}
-                      </div>
-                      <div>
-                        <div class="font-medium text-gray-900 dark:text-white capitalize">
-                          {intervention.implementationComplexity}
+                    </td>
+                  </tr>
+                  <tr
+                    class="intervention-detail-row hidden border-b border-gray-200 dark:border-gray-600"
+                    data-detail-index={index}
+                  >
+                    <td colspan={5} class="bg-gray-50 dark:bg-gray-700/50 px-6 py-5">
+                      <div class="text-sm text-gray-700 dark:text-gray-200">
+                        <div class="flex flex-col gap-6 md:flex-row">
+                          <div class="flex-1 space-y-4">
+                            {hasText(intervention.summary) && (
+                              <p class="leading-relaxed">{intervention.summary}</p>
+                            )}
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                              <div>
+                                <span class="font-semibold">Status:</span>
+                                <span class="ml-1">{intervention.status}</span>
+                              </div>
+                              <div>
+                                <span class="font-semibold">Dimensão:</span>
+                                <span class="ml-1">{formatDimensions(intervention.dimensions)}</span>
+                              </div>
+                              <div>
+                                <span class="font-semibold">Autores:</span>
+                                <span class="ml-1">{hasText(intervention.authors) ? intervention.authors : 'Sem informação'}</span>
+                              </div>
+                              <div>
+                                <span class="font-semibold">Data da revisão:</span>
+                                <span class="ml-1">{hasText(intervention.reviewDate) ? intervention.reviewDate : 'Sem informação'}</span>
+                              </div>
+                            </div>
+
+                            {hasText(intervention.title) && (
+                              <p class="text-sm">
+                                <span class="font-semibold">Título do estudo:</span>
+                                <span class="ml-1">{intervention.title}</span>
+                              </p>
+                            )}
+
+                            {intervention.studyLink && (
+                              <a
+                                href={intervention.studyLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2 text-primary hover:text-primary-dark transition-colors"
+                              >
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                </svg>
+                                Acesse o estudo completo
+                              </a>
+                            )}
+                          </div>
+
+                          {(hasText(intervention.implementationNotes) || hasText(intervention.costDescription)) && (
+                            <div class="w-full md:w-64 space-y-5">
+                              {hasText(intervention.implementationNotes) && (
+                                <div>
+                                  <div class="flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-white">
+                                    <span
+                                      class={`${indicatorBaseClass} ${getComplexityCircleClass(intervention.implementationComplexity)}`}
+                                      aria-hidden="true"
+                                    ></span>
+                                    <span>
+                                      Implementação — {getComplexityLabel(intervention.implementationComplexity)}
+                                    </span>
+                                  </div>
+                                  <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                                    {intervention.implementationNotes}
+                                  </p>
+                                </div>
+                              )}
+
+                              {hasText(intervention.costDescription) && (
+                                <div>
+                                  <div class="flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-white">
+                                    <span
+                                      class={`${indicatorBaseClass} ${getCostCircleClass(intervention.costLevel)}`}
+                                      aria-hidden="true"
+                                    ></span>
+                                    <span>
+                                      Custo — {getCostLabel(intervention.costLevel)}
+                                    </span>
+                                  </div>
+                                  <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                                    {intervention.costDescription}
+                                  </p>
+                                </div>
+                              )}
+                            </div>
+                          )}
                         </div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400">
-                          {intervention.implementation}
-                        </div>
                       </div>
-                    </div>
-                  </td>
-                  <td class="p-4">
-                    <div class="flex items-center gap-2">
-                      <div class="flex gap-1">
-                        {/* Cost indicators */}
-                        {intervention.cost === 'muito-baixo' && (
-                          <>
-                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
-                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
-                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
-                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
-                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
-                          </>
-                        )}
-                        {intervention.cost === 'baixo' && (
-                          <>
-                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
-                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
-                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
-                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
-                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
-                          </>
-                        )}
-                        {intervention.cost === 'medio' && (
-                          <>
-                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
-                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
-                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
-                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
-                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
-                          </>
-                        )}
-                        {intervention.cost === 'alto' && (
-                          <>
-                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
-                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
-                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
-                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
-                            <div class="w-3 h-3 rounded-full border-2 border-gray-300"></div>
-                          </>
-                        )}
-                        {intervention.cost === 'muito-alto' && (
-                          <>
-                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
-                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
-                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
-                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
-                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
-                          </>
-                        )}
-                      </div>
-                      <span class="text-sm text-gray-600 dark:text-gray-300 capitalize">
-                        {intervention.cost === 'muito-baixo' && 'Muito baixo'}
-                        {intervention.cost === 'baixo' && 'Baixo'}
-                        {intervention.cost === 'medio' && 'Médio'}
-                        {intervention.cost === 'alto' && 'Alto'}
-                        {intervention.cost === 'muito-alto' && 'Muito alto'}
-                      </span>
-                    </div>
-                  </td>
-                </tr>
+                    </td>
+                  </tr>
+                </>
               ))}
             </tbody>
           </table>
@@ -257,7 +367,7 @@ const { title, subtitle, categories, interventions } = data;
             O <span class="text-accent font-bold">OQF</span> é um <span class="italic">hub</span> de evidências que, como outros no Brasil e no mundo, visa melhorar a forma como governos e outras organizações do setor privado e da sociedade civil criam, partilham e utilizam evidências de alta qualidade na tomada de decisões.
           </p> <br>
           <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-            A partir de sólido conhecimento teórico e metodológico no âmbito do MAPE (Laboratório de Monitoramento e Avaliação de Políticas e Eleições do IESP-UERJ), sistematizamos evidências em diversas áreas de políticas públicas para determinar quais tipos de intervenções são mais eficientes em termos de resultados, e como podemos responder questões candentes no debate público.
+            A partir de sólido conhecimento teórico e metodológico no âmbito do <span class="text-accent font-bold">MAPE</span> (Laboratório de Monitoramento e Avaliação de Políticas e Eleições do IESP-UERJ), sistematizamos evidências em diversas áreas de políticas públicas para determinar quais tipos de intervenções são mais eficientes em termos de resultados, e como podemos responder questões candentes no debate público.
           </p> <br>
           <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
             Essas evidências são agregadas e produzidas a partir de revisões sistemáticas da literatura científica. Seguindo boas práticas nacionais e internacionais, sistematizamos trabalhos acadêmicos (sejam artigos, teses, dissertações ou outras revisões de literatura) que analisam a escala do efeito (se positivo, negativo ou misto); sua força (nível de impacto); qual o mecanismo que possibilita o resultado (como e por que algo funciona); se há moderadores (quando e porquê algo funciona); a implementação (como fazer); as percepções dos stakeholders em relação à política; e os custos envolvidos no tipo de intervenção.
@@ -311,7 +421,7 @@ const { title, subtitle, categories, interventions } = data;
             A literatura sobre uso de evidências em políticas públicas ressalta a importância da comunicação clara – especialmente em termos de custos e benefícios das políticas – para que pesquisas sejam incorporadas ao processo de decisão.
           </p><br>
           <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-            Com isso em mente, o OQF é um hub de evidências em formato acessível, com recursos gráficos e textos curtos.
+            Com isso em mente, o <span class="text-accent font-bold">OQF</span> é um hub de evidências em formato acessível, com recursos gráficos e textos curtos.
           </p>
         </div>
       </div>
@@ -358,15 +468,21 @@ const { title, subtitle, categories, interventions } = data;
       const clearBtn = document.getElementById('clear-filters');
       const interventionRows = document.querySelectorAll('.intervention-row');
       const interventionToggles = document.querySelectorAll('.intervention-toggle');
+      const detailRows = document.querySelectorAll('.intervention-detail-row');
       const noResults = document.getElementById('no-results');
 
       // Toggle intervention details
       interventionToggles.forEach(toggle => {
         toggle.addEventListener('click', function() {
-          const detail = this.parentNode?.querySelector('.intervention-detail');
-          if (detail) {
-            detail.classList.toggle('hidden');
-          }
+          const index = this.getAttribute('data-index');
+          if (!index) return;
+          const detailRow = document.querySelector(`.intervention-detail-row[data-detail-index="${index}"]`);
+          if (!detailRow) return;
+
+          const willShow = detailRow.classList.contains('hidden');
+          detailRow.classList.toggle('hidden');
+          detailRow.style.display = '';
+          this.setAttribute('aria-expanded', String(willShow));
         });
       });
 
@@ -379,17 +495,32 @@ const { title, subtitle, categories, interventions } = data;
         let visibleCount = 0;
 
         interventionRows.forEach(row => {
-          const category = row.getAttribute('data-category')?.toLowerCase() || '';
+          const dimensions = row.getAttribute('data-dimensions')?.toLowerCase() || '';
           const text = row.textContent?.toLowerCase() || '';
-          
-          const categoryMatch = !categoryValue || category.includes(categoryValue);
+          const dimensionTokens = dimensions.split('|').map((token) => token.trim()).filter(Boolean);
+          const index = row.getAttribute('data-index');
+          const detailRow = index ? document.querySelector(`.intervention-detail-row[data-detail-index="${index}"]`) : null;
+          const toggle = row.querySelector('.intervention-toggle');
+
+          const categoryMatch =
+            !categoryValue || dimensionTokens.some((token) => token.includes(categoryValue));
           const searchMatch = !searchValue || text.includes(searchValue);
           
           if (categoryMatch && searchMatch) {
             row.style.display = '';
+            if (detailRow) {
+              detailRow.style.display = detailRow.classList.contains('hidden') ? 'none' : '';
+            }
             visibleCount++;
           } else {
             row.style.display = 'none';
+            if (detailRow) {
+              detailRow.style.display = 'none';
+              detailRow.classList.add('hidden');
+            }
+            if (toggle) {
+              toggle.setAttribute('aria-expanded', 'false');
+            }
           }
         });
 
@@ -408,6 +539,9 @@ const { title, subtitle, categories, interventions } = data;
         searchInput.value = '';
         interventionRows.forEach(row => {
           row.style.display = '';
+        });
+        detailRows.forEach(row => {
+          row.style.display = row.classList.contains('hidden') ? 'none' : '';
         });
         noResults.classList.add('hidden');
       }
