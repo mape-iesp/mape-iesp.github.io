@@ -77,8 +77,8 @@ export const headerData = {
     },
   ],
   actions: [
-    { icon: 'tabler:brand-instagram', href: 'https://instagram.com/'},
-    { icon: 'tabler:brand-x', href: 'https://x.com' },
+    { icon: 'tabler:brand-instagram', href: 'https://instagram.com/mape.iesp'},
+    { icon: 'tabler:brand-x', href: 'https://x.com/mape_iesp' },
     ],
 };
 
