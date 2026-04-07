@@ -396,3 +396,66 @@ interventions:
     title: "As emendas parlamentares são suficientes em suprir a defasagem na saúde?"
     reviewDate: "14/11/2025"
     studyLink: "https://drive.google.com/file/d/1l_NqWw6GHjIkhJV9mMOG8FAv8NVeATkg/view?usp=sharing"
+
+  - status: "Revisão original"
+    name: "Política Nacional de Saúde Integral LGBT"
+    resultado: "Saúde pública"
+    effectDirection: "neutro"
+    effectStrength: "indeterminado"
+    implementationComplexity: "moderada"
+    implementationNotes: >
+      Incorporação da política nos planos municipais de saúde; criação de comitês técnicos; capacitação permanente dos profissionais; desenvolvimento de protocolos específicos; monitoramento com indicadores de acesso e qualidade; articulação com a sociedade civil.
+    costLevel: "sem-informacao"
+    costDescription: >
+      Não há dados sistematizados. Estudos sugerem que ações de capacitação e criação de estruturas leves têm custo moderado, mas a ausência de financiamento específico é barreira comum.
+    summary: >
+      Os resultados indicam que, embora a política represente um avanço normativo e institucional significativo, sua implementação é frequentemente fragmentada, inconsistente e dependente de iniciativas locais ou individuais. Evidências apontam que a falta de capacitação sistemática dos profissionais de saúde, a ausência de diretrizes operacionais claras, a insuficiência de financiamento e a persistência de preconceitos institucionais e sociais limitam o impacto da política.
+    dimensions:
+      - "Saúde"
+      - "Direitos Humanos"
+    authors: "Ana Paula Lima dos Santos; Frederico Augusto Auad de Gomes Filho"
+    title: "Política Nacional de Saúde Integral de Lésbicas, Gays, Bissexuais, Travestis e Transexuais: Revisão Sistemática de avaliação da política"
+    reviewDate: "19/12/2025"
+    studyLink: "https://doi.org/10.31235/osf.io/uf54r_v1"
+
+  - status: "Revisão original"
+    name: "Disque 100"
+    resultado: "Acolhimento à população LGBTQIA+ vítimas de violência"
+    effectDirection: "neutro"
+    effectStrength: "indeterminado"
+    implementationComplexity: "moderada"
+    implementationNotes: >
+      Envolve a manutenção e a ampliação de uma estrutura de atendimento capacitada e qualificada, além de uma infraestrutura administrativa conectada intersetorialmente entre diferentes órgãos.
+    costLevel: "variavel"
+    costDescription: >
+      Baixo a moderado, relacionados à manutenção da estrutura do canal.
+    summary: >
+      Embora o Canal do Disque 100 seja um primeiro passo relevante para denúncias de violação de direitos da comunidade LGBTQIA+ no Brasil, são necessárias melhorias no acolhimento às vítimas e, sobretudo, no acompanhamento e na resolução das denúncias no longo prazo.
+    dimensions:
+      - "Saúde"
+      - "Direitos Humanos"
+    authors: "Pedro Bahia; Shamira Rossi"
+    title: "O Disque 100 enquanto canal de atenção e acolhimento à população LGBTQIA+ vítimas de violência no Brasil"
+    reviewDate: "20/1/2026"
+    studyLink: "https://drive.google.com/drive/u/0/folders/1kO3fZnXoJMKD-4TChh6DXXLDVkugL6-C"
+
+  - status: "Revisão original"
+    name: "PrEP para população LGBT no Brasil"
+    resultado: "Saúde pública"
+    effectDirection: "positivo"
+    effectStrength: "moderado"
+    implementationComplexity: "moderada"
+    implementationNotes: >
+      Estudos indicam alta eficácia da PrEP quando a adesão é satisfatória.
+    costLevel: "medio"
+    costDescription: >
+      A implementação da PrEP no Brasil apresenta bom custo-benefício, especialmente para populações vulneráveis com alta incidência de HIV.
+    summary: >
+      A força do efeito é moderada, visto que estudos indicam alta eficácia da PrEP quando a adesão é satisfatória. Em relação à implementação, os estudos analisados sugerem a necessidade de combinar a disponibilidade da PrEP com contextos institucionais e sociais específicos, como a capacitação de equipes multiprofissionais, a presença de redes comunitárias, a influência de pares e o acesso à informação.
+    dimensions:
+      - "Saúde"
+      - "Direitos Humanos"
+    authors: "Jorge Lucas Nery de Oliveira; Olga Caldas de Oliveira e Silva"
+    title: "Facilitadores e barreiras à implementação da PrEP no Brasil para a população LGBTQIA+"
+    reviewDate: "22/1/2026"
+    studyLink: "https://drive.google.com/drive/u/0/folders/1fZwZQHOVkQuml6Q93DIV4LabnOlKkomC"
