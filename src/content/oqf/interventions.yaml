@@ -12,6 +12,10 @@ categories:
   - "Saúde"
   - "Desigualdade"
   - "Cidades"
+  - "Assistência Social"
+  - "Administração Pública"
+  - "Direito e Democracia"
+  - "Emprego e Renda"
 
 interventions:
   - status: "Revisão original"
@@ -23,7 +27,7 @@ interventions:
     implementationNotes: "Requer regras claras."
     costLevel: "baixo"
     summary: >
-      O efeito da política sobre a melhoria do desempenho acadêmico dos alunos é positivo e moderado, mediado por características da implementação e dos estudantes.
+      Efeito positivo e moderado sobre o desempenho acadêmico, mediado por características da implementação e dos estudantes.
     dimensions:
       - "Educação"
     authors: "Bruno Marques Schaefer; Tomás Paixão Borges; Frederico Augusto Auad Filho"
@@ -37,18 +41,17 @@ interventions:
     effectDirection: "negativo"
     effectStrength: "moderado"
     implementationComplexity: "complexa"
-    implementationNotes: >
-      Imposição vertical. Participação comunitária, desenho urbano sensível ao entorno e transparência nos critérios de planejamento e implementação diminuem a chance de polarização local.
+    implementationNotes: "A imposição vertical agrava o problema; participação comunitária, desenho urbano sensível ao entorno e critérios transparentes no planejamento reduzem a polarização."
     costLevel: "alto"
     summary: >
-      O efeito da implementação de políticas habitacionais sobre a polarização política local é negativo e moderado, caracterizado principalmente por ressentimento pós-reassentamento forçado, medo de variação dos preços locais, remoção de vínculos comunitários e percepção de injustiça.
+      Efeito negativo e moderado sobre a polarização política local, associado a ressentimento após reassentamento forçado, medo de variação nos preços locais, ruptura de vínculos comunitários e percepção de injustiça.
     dimensions:
       - "Habitação"
       - "Democracia"
     authors: "Tomás Paixão Borges; Thaiza Siqueira da Silva; Ana Paula Lima dos Santos"
     title: "Políticas habitacionais aumentam a polarização política local?"
     reviewDate: "8/7/2025"
-    studyLink: "https://osf.io/preprints/osf/txuq9_v1"
+    studyLink: "https://doi.org/10.31235/osf.io/yg9m4_v1"
 
   - status: "Meta-revisão"
     name: "Adoção de câmeras corporais pelas forças de segurança"
@@ -56,11 +59,10 @@ interventions:
     effectDirection: "positivo"
     effectStrength: "moderado"
     implementationComplexity: "complexa"
-    implementationNotes: >
-      A instalação das câmeras nos uniformes policiais é tecnicamente viável, mas é preciso considerar obsolescência e manutenção dos equipamentos.
+    implementationNotes: "A instalação é tecnicamente viável, mas é preciso prever custos de manutenção e obsolescência dos equipamentos."
     costLevel: "medio"
     summary: >
-      O efeito sobre a letalidade policial é positivo e moderado (redução de mortes), mediado pela diminuição do uso da força durante as atividades policiais.
+      Efeito positivo e moderado sobre a letalidade policial (redução de mortes), mediado pela redução do uso da força.
     dimensions:
       - "Segurança"
       - "Direitos Humanos"
@@ -77,8 +79,9 @@ interventions:
     implementationComplexity: "complexa"
     implementationNotes: "Requer capacitação local e padronização tecnológica."
     costLevel: "medio"
+    costDescription: "Alto investimento inicial em infraestrutura; custo-efetivo a médio prazo (5+ anos)."
     summary: >
-      Políticas inteligentes de adaptação climática apresentam efeito positivo e forte na adaptação às mudanças climáticas. Há melhoria de prevenção de desastres e aumento da eficiência operacional em gestão hídrica, sobretudo em contextos com infraestrutura adequada.
+      Efeito positivo sobre a adaptação climática: melhoria de 30% na prevenção de desastres e aumento de 18–25% na eficiência operacional da gestão hídrica. Mais efetiva onde há infraestrutura adequada.
     dimensions:
       - "Meio ambiente"
     authors: "Frederico Augusto Auad de Gomes Filho; João Pedro Cavalcanti Silva; Luísa Barreto Fernandes; Polianna de Almeida Portela"
@@ -86,22 +89,23 @@ interventions:
     reviewDate: "7/7/2025"
     studyLink: "https://drive.google.com/file/d/1mWorYidedT8ENUElCMj2i6Y3Td36jDCV/view?usp=sharing"
 
-  - status: "Meta-revisão"
-    name: "Políticas de apoio financeiro estudantil"
+  - status: "Revisão original"
+    name: "Transferência de renda condicionada (apoio estudantil)"
     resultado: "Evasão escolar"
     effectDirection: "positivo"
-    effectStrength: "moderado"
-    implementationComplexity: "moderada"
-    implementationNotes: "Requer regras claras."
-    costLevel: "baixo"
+    effectStrength: "indeterminado"
+    implementationComplexity: "simples"
+    implementationNotes: "Usa infraestruturas existentes (CadÚnico, Censo Escolar); o gargalo é verificar a frequência."
+    costLevel: "variavel"
+    costDescription: "Concentrado no valor transferido (US$5 a 200/mês, conforme o país); no Pé-de-Meia (R$200/mês), simulação ex-ante estima 0,7 p.p. a menos de evasão por R$1 mil investidos, mais que o dobro do necessário para compensar o custo social de R$384 mil por jovem sem ensino médio."
     summary: >
-      Políticas de remuneração estudantil são positivas na redução da evasão escolar, especialmente pelo alívio de restrições financeiras, aumento da frequência escolar e fortalecimento de vínculos com a instituição. Programas bem desenhados apresentam alta relação custo-efetividade.
+      Dos 11 estudos primários, 6 encontram efeito positivo, 4 nulo e 1 negativo; efeitos maiores onde a frequência de base é baixa e há barreiras econômicas (Camboja: ~25 p.p. na frequência; México: +8,6 a 9,2 p.p. na conclusão do ensino médio). Funciona melhor com condicionalidade, valor competitivo com o mercado de trabalho, repasse direto ao estudante e recebimento contínuo.
     dimensions:
       - "Educação"
-    authors: "Rodolfo Tavares; Ana Beatriz Oliveira"
-    title: "Políticas de remuneração estudantil diminuem a evasão escolar?"
-    reviewDate: "16/7/2025"
-    studyLink: "https://drive.google.com/file/d/1w5xEr_SZunsMqJjHRO0KlJvCZhF2oBtT/view?usp=sharing"
+    authors: "Carlos Freitas; Pedro Bahia"
+    title: "Políticas de Transferência de Renda e Redução do Abandono Escolar"
+    reviewDate: "10/8/2026"
+    studyLink: "https://drive.google.com/file/d/15yFm_6_vWndzFVLorCJxtPku8TUvYoZT/view?usp=sharing"
 
   - status: "Meta-revisão"
     name: "Posse de armas de fogo"
@@ -112,7 +116,7 @@ interventions:
     implementationNotes: "Requer fiscalização constante."
     costLevel: "sem-informacao"
     summary: >
-      A ampliação do acesso a armas gera efeito moderado a forte sobre a letalidade, especialmente por facilitar o acesso para indivíduos com intenção criminal.
+      Efeito negativo, de moderado a forte, sobre a letalidade, por ampliar o acesso a armas por indivíduos com intenção criminal.
     dimensions:
       - "Segurança"
       - "Direitos Humanos"
@@ -123,15 +127,14 @@ interventions:
 
   - status: "Meta-revisão"
     name: "Ações afirmativas no ensino superior"
-    resultado: "Ingresso de estudantes PPI no Ensino Superior"
+    resultado: "Ingresso de estudantes PPI no ensino superior"
     effectDirection: "positivo"
-    effectStrength: "moderado"
+    effectStrength: "indeterminado"
     implementationComplexity: "simples"
-    implementationNotes: >
-      A reserva de vagas combina critérios socioeconômicos e raciais, além de contar com bancas de heteroidentificação para coibir fraudes.
+    implementationNotes: "Reserva de vagas combinando critérios de renda e raça, com bancas de heteroidentificação para reduzir fraudes."
     costLevel: "sem-informacao"
     summary: >
-      Estudos sobre a efetividade das cotas indicam efeito positivo na inclusão de alunos pretos e pardos, permitindo desempenho equivalente ao de estudantes não cotistas.
+      A maioria dos estudos aponta efeito positivo na inclusão de estudantes pretos e pardos no ensino superior, com desempenho semelhante ao de não cotistas.
     dimensions:
       - "Educação"
     authors: "Antonio Carlos Tiburcio Rodrigues da Silva; Guilherme de Abreu Duque; Luiza de Souza Azevedo"
@@ -145,11 +148,10 @@ interventions:
     effectDirection: "positivo"
     effectStrength: "fraco"
     implementationComplexity: "simples"
-    implementationNotes: >
-      Embora o PBF possua amplo alcance, a política não tem foco direto em melhorias de desempenho escolar.
+    implementationNotes: "Política de alcance nacional, em curso há mais de duas décadas."
     costLevel: "sem-informacao"
     summary: >
-      Estudos apontam efeito positivo, porém fraco, do Programa Bolsa Família sobre o desempenho escolar, reforçando a influência de fatores adicionais como qualidade do ensino, infraestrutura escolar e engajamento dos estudantes.
+      Efeito positivo, porém fraco, sobre o desempenho escolar. O desempenho não é o objetivo principal do programa e depende de outros fatores, como qualidade do ensino, infraestrutura escolar e interesse dos alunos.
     dimensions:
       - "Educação"
     authors: "Izabela Borges; Pedro Bahia"
@@ -163,20 +165,36 @@ interventions:
     effectDirection: "positivo"
     effectStrength: "fraco"
     implementationComplexity: "simples"
-    implementationNotes: >
-      Envolve treinamento de policiais para interações respeitosas e imparciais, associado a iniciativas de engajamento comunitário.
+    implementationNotes: "Treinamento para interações respeitosas e imparciais e iniciativas de engajamento comunitário."
     costLevel: "variavel"
-    costDescription: >
-      A princípio o custo é baixo, mas pode se tornar alto quando não há transformações estruturais.
+    costDescription: "Baixo a princípio, mas alto quando não acompanhado de transformações estruturais."
     summary: >
-      O efeito sobre a legitimidade da polícia é positivo, porém fraco, apoiado em práticas procedimentais justas, reconhecimento de injustiças passadas e estímulo à participação cívica.
+      Efeito positivo, porém fraco, sobre a legitimidade da polícia, associado a práticas procedimentais justas, reconhecimento institucional de injustiças passadas e abertura à participação cívica.
     dimensions:
       - "Segurança"
       - "Direitos Humanos"
-    authors: "Thaiza Siqueira da Silva; Ana Paula Lima dos Santos; Tomás Paixão Borges; Ana Beatriz do Nascimento Oliveira"
+    authors: "Thaiza Siqueira da Silva; Ana Paula Lima dos Santos; Tomás Paixão Borges"
     title: "Policiamento de proximidade aumenta a legitimidade da polícia?"
     reviewDate: "3/9/2025"
-    studyLink: "https://drive.google.com/file/d/1mHT7GimD-McFK47p8Ejti8pDVITN4VQ2/view?usp=sharing"
+    studyLink: "https://doi.org/10.31235/osf.io/9asw4_v1"
+
+  - status: "Meta-revisão"
+    name: "Mercado de carbono"
+    resultado: "Emissões de carbono"
+    effectDirection: "neutro"
+    effectStrength: "indeterminado"
+    implementationComplexity: "complexa"
+    implementationNotes: "Coexistem o mercado regulado (Protocolo de Quioto: Implementação Conjunta, MDL e Comércio de Emissões) e o voluntário."
+    costLevel: "sem-informacao"
+    costDescription: "Custos de fiscalização não identificados; títulos com preço fixo ou flutuante."
+    summary: >
+      Efeito nulo sobre as emissões. O mercado opera por créditos de carbono, instrumentos financeiros adquiridos por entidades que ultrapassam suas metas de emissão, negociáveis sem barreiras geográficas.
+    dimensions:
+      - "Meio ambiente"
+    authors: "Luiza de Souza Azevedo; Antonio Carlos Tiburcio Rodrigues da Silva; Guilherme de Abreu Duque"
+    title: "O mercado de carbono regulado reduz o impacto ambiental das empresas?"
+    reviewDate: "14/11/2025"
+    studyLink: "https://drive.google.com/file/d/1e0-hUqWa261K2xklE_bgXioSXYLhf13J/view?usp=sharing"
 
   - status: "Revisão original"
     name: "PROINFA (Programa de Incentivo às Fontes Alternativas de Energia Elétrica)"
@@ -184,13 +202,11 @@ interventions:
     effectDirection: "positivo"
     effectStrength: "moderado"
     implementationComplexity: "complexa"
-    implementationNotes: >
-      Apresenta desafios como falta de padronização tecnológica e necessidade de capacitação local. O programa envolve leilões, contratação regional e monitoramento pós-implantação.
+    implementationNotes: "Desafios de padronização tecnológica (ex.: caldeiras para biomassa de babaçu) e necessidade de capacitação local."
     costLevel: "alto"
-    costDescription: >
-      Alto custo inicial estimado em R$ 8,6 bilhões para 3.300 MW, com custo-efetividade a médio prazo.
+    costDescription: "R$ 8,6 bi para 3.300 MW; custo-efetivo a médio prazo, com retorno socioeconômico (empregos formais +13,82%)."
     summary: >
-      O PROINFA gerou efeito positivo moderado ao ampliar a participação de fontes renováveis no sistema elétrico e produzir impactos socioeconômicos locais relevantes.
+      A participação de renováveis na matriz reduz vulnerabilidades estruturais, fortalece a segurança do abastecimento e amplia a resiliência a eventos climáticos extremos.
     dimensions:
       - "Meio ambiente"
       - "Transição Energética"
@@ -205,13 +221,11 @@ interventions:
     effectDirection: "positivo"
     effectStrength: "moderado"
     implementationComplexity: "complexa"
-    implementationNotes: >
-      Apresenta desafios como falta de padronização tecnológica e necessidade de capacitação local. O programa envolve leilões, contratação regional e monitoramento pós-implantação.
+    implementationNotes: "Desafios de padronização tecnológica (ex.: caldeiras para biomassa de babaçu) e necessidade de capacitação local."
     costLevel: "alto"
-    costDescription: >
-      Alto custo inicial estimado em R$ 8,6 bilhões para 3.300 MW, com custo-efetividade a médio prazo.
+    costDescription: "R$ 8,6 bi para 3.300 MW; custo-efetivo a médio prazo, com retorno socioeconômico (empregos formais +13,82%)."
     summary: >
-      A expansão das energias renováveis pelo PROINFA contribuiu para impactos econômicos locais, favorecendo ganhos de renda e emprego.
+      A participação de renováveis na matriz reduz vulnerabilidades estruturais, fortalece a segurança do abastecimento e amplia a resiliência a eventos climáticos extremos.
     dimensions:
       - "Meio ambiente"
       - "Transição Energética"
@@ -223,14 +237,14 @@ interventions:
   - status: "Revisão original"
     name: "GLO (Operações de Garantia da Lei e da Ordem)"
     resultado: "Violência urbana"
-    effectDirection: "positivo"
-    effectStrength: "fraco"
+    effectDirection: "neutro"
+    effectStrength: "indeterminado"
     implementationComplexity: "complexa"
-    implementationNotes: >
-      Por ser temporária e altamente custosa, a operação enfrenta desafios logísticos na articulação com forças estaduais de segurança pública.
+    implementationNotes: "Intervenção temporária, com desafios operacionais e logísticos de articulação com as forças estaduais."
     costLevel: "alto"
+    costDescription: "Alto em recursos orçamentários e humanos."
     summary: >
-      A GLO apresenta efeito positivo de curto prazo no combate à violência urbana, mas o alto custo e a curta duração dos resultados colocam em dúvida sua continuidade.
+      Efeito positivo apenas no curto prazo; os resultados são fugazes e não garantem redução duradoura da violência.
     dimensions:
       - "Segurança"
       - "Direitos Humanos"
@@ -245,12 +259,10 @@ interventions:
     effectDirection: "positivo"
     effectStrength: "forte"
     implementationComplexity: "moderada"
-    implementationNotes: >
-      Cada localidade precisa realizar diagnóstico próprio para definir orçamento e estrutura adequados.
+    implementationNotes: "Exige diagnóstico local para definir orçamento e estrutura adequados."
     costLevel: "sem-informacao"
-    costDescription: "Sem informação."
     summary: >
-      A Ronda Maria da Penha reduz a violência contra a mulher e é percebida como política eficaz pelas beneficiárias, com resultados dependentes do orçamento local.
+      Efeito positivo e forte na redução da violência contra a mulher; a ronda é percebida como eficaz pelas mulheres atendidas. Os resultados dependem do orçamento local para recursos humanos e materiais.
     dimensions:
       - "Segurança"
       - "Direitos Humanos"
@@ -265,20 +277,18 @@ interventions:
     effectDirection: "positivo"
     effectStrength: "forte"
     implementationComplexity: "simples"
-    implementationNotes: >
-      Séries de blitz realizadas ao longo de um a três anos, com atenção ao efetivo policial, horas extras e campanhas de publicidade.
+    implementationNotes: "Séries de blitz ao longo de um a três anos, com atenção ao efetivo policial e às horas extras."
     costLevel: "variavel"
-    costDescription: >
-      Custos variam entre baixo e médio, a depender do efetivo mobilizado em cada blitz.
+    costDescription: "Baixo a médio, conforme o efetivo de cada blitz."
     summary: >
-      As blitzes de alcoolemia apresentam efeito positivo na redução de acidentes de trânsito, com destaque para a importância das medidas legais e da divulgação em campanhas públicas.
+      Estudos em diferentes países confirmam que limites legais de alcoolemia ao volante reduzem acidentes, mortalidade e morbidade. Campanhas publicitárias são centrais por ampliar a visibilidade da fiscalização.
     dimensions:
       - "Segurança"
       - "Saúde"
     authors: "Ana Paula Lima dos Santos; Thaiza Siqueira da Silva; Ana Beatriz do Nascimento Oliveira; Tomás Paixão Borges"
     title: "Blitzes de alcoolemia reduzem acidentes de trânsito?"
     reviewDate: "20/10/2025"
-    studyLink: "https://drive.google.com/file/d/1PATigHm802JQ_e29UCh05kVTwhLfOpaA/view?usp=sharing"
+    studyLink: "https://doi.org/10.31235/osf.io/mfa7z_v2"
 
   - status: "Revisão original"
     name: "Programa Bolsa Verde"
@@ -286,16 +296,15 @@ interventions:
     effectDirection: "positivo"
     effectStrength: "moderado"
     implementationComplexity: "complexa"
-    implementationNotes: >
-      Coordenação centralizada no MMA com operação em rede. Desafios incluem logística em áreas remotas e integração de dados; o uso da infraestrutura do Bolsa Família reduz custos.
+    implementationNotes: "Coordenação do MMA, operada via ICMBio e Incra; desafios de logística em áreas remotas, acesso à internet e integração de dados. O aproveitamento da infraestrutura do Bolsa Família reduz custos operacionais."
     costLevel: "baixo"
     summary: >
-      Há consenso sobre o efeito positivo moderado do Bolsa Verde no alívio imediato da pobreza, com melhoria da segurança alimentar e da renda familiar.
+      Efeito positivo, com heterogeneidade em magnitude e sustentabilidade: efetividade moderada e consistente no alívio imediato da pobreza (segurança alimentar e renda familiar); na dimensão ambiental, resultados mais ambíguos.
     dimensions:
       - "Meio ambiente"
       - "Desigualdade"
     authors: "Frederico Augusto Auad de Gomes Filho; Polianna de Almeida Portela; João Pedro Cavalcanti Silva"
-    title: "Bolsa Verde: Revisão Sitemática de Avaliação de política pública"
+    title: "Bolsa Verde: Revisão Sistemática de Avaliação de Política Pública"
     reviewDate: "29/9/2025"
     studyLink: "https://ssrn.com/abstract=5545819"
 
@@ -305,16 +314,15 @@ interventions:
     effectDirection: "positivo"
     effectStrength: "moderado"
     implementationComplexity: "complexa"
-    implementationNotes: >
-      Coordenação centralizada no MMA com operação em rede. Desafios incluem logística em áreas remotas e integração de dados; o uso da infraestrutura do Bolsa Família reduz custos.
+    implementationNotes: "Coordenação do MMA, operada via ICMBio e Incra; desafios de logística em áreas remotas, acesso à internet e integração de dados. O aproveitamento da infraestrutura do Bolsa Família reduz custos operacionais."
     costLevel: "baixo"
     summary: >
-      A literatura indica consenso sobre a direção positiva do efeito ambiental, ainda que com heterogeneidade na magnitude, escala e sustentabilidade dos resultados.
+      Efeito positivo, com heterogeneidade em magnitude e sustentabilidade: efetividade moderada e consistente no alívio imediato da pobreza (segurança alimentar e renda familiar); na dimensão ambiental, resultados mais ambíguos.
     dimensions:
       - "Meio ambiente"
       - "Desigualdade"
     authors: "Frederico Augusto Auad de Gomes Filho; Polianna de Almeida Portela; João Pedro Cavalcanti Silva"
-    title: "Bolsa Verde: Revisão Sitemática de Avaliação de política pública"
+    title: "Bolsa Verde: Revisão Sistemática de Avaliação de Política Pública"
     reviewDate: "29/9/2025"
     studyLink: "https://ssrn.com/abstract=5545819"
 
@@ -324,19 +332,17 @@ interventions:
     effectDirection: "positivo"
     effectStrength: "forte"
     implementationComplexity: "simples"
-    implementationNotes: >
-      Programas gratuitos ou de baixo custo oferecidos por municípios, conduzidos por profissionais de Educação Física, exigindo coordenação intersetorial e infraestrutura acessível.
+    implementationNotes: "Programas em geral municipais e gratuitos, conduzidos por professores de Educação Física em praças, parques ou centros comunitários; exigem coordenação intersetorial e acompanhamento profissional."
     costLevel: "variavel"
-    costDescription: >
-      Custos variam de atividades ao ar livre, com valores reduzidos, à instalação de equipamentos em parques.
+    costDescription: "Vai de programas ao ar livre, mais baratos, à instalação de equipamentos em parques."
     summary: >
-      Resultados demonstram efeitos positivos consistentes sobre saúde, bem-estar psicológico, qualidade de vida e integração social da população idosa.
+      Efeitos positivos e consistentes sobre saúde, bem-estar psicológico e qualidade de vida, além de favorecer a socialização e o sentimento de pertencimento.
     dimensions:
       - "Saúde"
     authors: "Ana Paula Lima dos Santos; Thaiza Siqueira da Silva"
     title: "Políticas de promoção de atividades físicas para idosos melhoram o bem-estar e a saúde dessa população?"
     reviewDate: "31/10/2025"
-    studyLink: "https://drive.google.com/file/d/1UEfJjrmGfU9HEbP-QYtSMB9-t2FniFU0/view?usp=sharing"
+    studyLink: "https://doi.org/10.31235/osf.io/thmry_v3"
 
   - status: "Meta-revisão"
     name: "Soluções Baseadas na Natureza"
@@ -344,13 +350,11 @@ interventions:
     effectDirection: "positivo"
     effectStrength: "moderado"
     implementationComplexity: "moderada"
-    implementationNotes: >
-      Barreiras incluem custos iniciais, falta de expertise, fragmentação espacial e dependência de trajetória; facilitadores são financiamento estável, capacitação técnica e arcabouço legal.
+    implementationNotes: "Barreiras incluem custos iniciais, falta de expertise, fragmentação espacial e dependência de trajetória; facilitadores são financiamento estável, capacitação técnica e arcabouço legal."
     costLevel: "sem-informacao"
-    costDescription: >
-      Sem informação consolidada sobre custos, mas análises de custo-benefício apontam benefícios superiores aos custos.
+    costDescription: "Análises de custo-benefício indicam benefícios superiores aos custos."
     summary: >
-      As Soluções Baseadas na Natureza são efetivas em promover resiliência urbana, embora moderadas por escala, contexto institucional e participação social.
+      As NbS são consistentemente efetivas para a resiliência urbana, com efeito moderado por escala, contexto institucional e participação social; a literatura tem lacunas de mensuração quantitativa.
     dimensions:
       - "Meio ambiente"
       - "Cidades"
@@ -365,14 +369,14 @@ interventions:
     effectDirection: "positivo"
     effectStrength: "forte"
     implementationComplexity: "simples"
-    implementationNotes: >
-      O PBF possui trajetória consolidada e alcance nacional, com forte capilaridade territorial.
+    implementationNotes: "Política de longa trajetória e alcance nacional."
     costLevel: "medio"
     summary: >
-      Evidências empíricas apontam redução da taxa de homicídios municipal a partir da ampliação do recebimento do PBF, condicionada por fatores locais como capacidade estatal e presença criminal.
+      Estudos empíricos indicam redução da taxa municipal de homicídios com a ampliação do PBF, com efeitos condicionados por capacidade estatal, presença criminal e outros fatores locais.
     dimensions:
       - "Segurança"
       - "Direitos Humanos"
+      - "Assistência Social"
     authors: "Pedro Bahia; Rodolfo Tavares; Shamira Rossi; Diego Campos; Eduarda Zuza"
     title: "O efeito do Programa Bolsa Família sobre a violência letal no município"
     reviewDate: "4/11/2025"
@@ -384,11 +388,10 @@ interventions:
     effectDirection: "positivo"
     effectStrength: "fraco"
     implementationComplexity: "complexa"
-    implementationNotes: >
-      Depende do orçamento disponível para emendas, com variações conforme o tipo de emenda e o contexto político.
+    implementationNotes: "Depende do orçamento disponível, e cada tipo de emenda tem regras próprias."
     costLevel: "alto"
     summary: >
-      Emendas parlamentares podem auxiliar municípios com necessidade de recursos, mas frequentemente geram desigualdades territoriais e custos políticos elevados.
+      As emendas auxiliam municípios que precisam de recursos, mas criam desigualdades territoriais na saúde pela distribuição desigual per capita; o principal custo é político.
     dimensions:
       - "Saúde"
       - "Direitos Humanos"
@@ -403,13 +406,11 @@ interventions:
     effectDirection: "neutro"
     effectStrength: "indeterminado"
     implementationComplexity: "moderada"
-    implementationNotes: >
-      Incorporação da política nos planos municipais de saúde; criação de comitês técnicos; capacitação permanente dos profissionais; desenvolvimento de protocolos específicos; monitoramento com indicadores de acesso e qualidade; articulação com a sociedade civil.
+    implementationNotes: "Inclusão nos planos municipais de saúde, comitês técnicos, capacitação permanente, protocolos específicos e monitoramento com indicadores."
     costLevel: "sem-informacao"
-    costDescription: >
-      Não há dados sistematizados. Estudos sugerem que ações de capacitação e criação de estruturas leves têm custo moderado, mas a ausência de financiamento específico é barreira comum.
+    costDescription: "Sem dados sistematizados; capacitação e estruturas leves têm custo moderado, mas a falta de financiamento específico é barreira comum."
     summary: >
-      Os resultados indicam que, embora a política represente um avanço normativo e institucional significativo, sua implementação é frequentemente fragmentada, inconsistente e dependente de iniciativas locais ou individuais. Evidências apontam que a falta de capacitação sistemática dos profissionais de saúde, a ausência de diretrizes operacionais claras, a insuficiência de financiamento e a persistência de preconceitos institucionais e sociais limitam o impacto da política.
+      A política é um avanço normativo e institucional, mas sua implementação é fragmentada e dependente de iniciativas locais. Falta de capacitação, de diretrizes operacionais e de financiamento, além de preconceitos institucionais, limitam o impacto.
     dimensions:
       - "Saúde"
       - "Direitos Humanos"
@@ -420,17 +421,15 @@ interventions:
 
   - status: "Revisão original"
     name: "Disque 100"
-    resultado: "Acolhimento à população LGBTQIA+ vítimas de violência"
+    resultado: "Acolhimento à população LGBTQIA+ vítima de violência"
     effectDirection: "neutro"
     effectStrength: "indeterminado"
     implementationComplexity: "moderada"
-    implementationNotes: >
-      Envolve a manutenção e a ampliação de uma estrutura de atendimento capacitada e qualificada, além de uma infraestrutura administrativa conectada intersetorialmente entre diferentes órgãos.
+    implementationNotes: "Manter e ampliar uma estrutura de atendimento qualificada, conectada a diferentes órgãos."
     costLevel: "variavel"
-    costDescription: >
-      Baixo a moderado, relacionados à manutenção da estrutura do canal.
+    costDescription: "Baixo a moderado, ligado à manutenção do canal."
     summary: >
-      Embora o Canal do Disque 100 seja um primeiro passo relevante para denúncias de violação de direitos da comunidade LGBTQIA+ no Brasil, são necessárias melhorias no acolhimento às vítimas e, sobretudo, no acompanhamento e na resolução das denúncias no longo prazo.
+      O Disque 100 é um primeiro passo relevante para denúncias de violações contra a população LGBTQIA+, mas precisa melhorar o acolhimento às vítimas e o acompanhamento e a resolução das denúncias no longo prazo.
     dimensions:
       - "Saúde"
       - "Direitos Humanos"
@@ -445,13 +444,10 @@ interventions:
     effectDirection: "positivo"
     effectStrength: "moderado"
     implementationComplexity: "moderada"
-    implementationNotes: >
-      Estudos indicam alta eficácia da PrEP quando a adesão é satisfatória.
     costLevel: "medio"
-    costDescription: >
-      A implementação da PrEP no Brasil apresenta bom custo-benefício, especialmente para populações vulneráveis com alta incidência de HIV.
+    costDescription: "Bom custo-benefício, sobretudo para populações vulneráveis com alta incidência de HIV."
     summary: >
-      A força do efeito é moderada, visto que estudos indicam alta eficácia da PrEP quando a adesão é satisfatória. Em relação à implementação, os estudos analisados sugerem a necessidade de combinar a disponibilidade da PrEP com contextos institucionais e sociais específicos, como a capacitação de equipes multiprofissionais, a presença de redes comunitárias, a influência de pares e o acesso à informação.
+      Alta eficácia quando a adesão é satisfatória. A efetividade depende de capacitação de equipes multiprofissionais, redes comunitárias, influência de pares e acesso à informação.
     dimensions:
       - "Saúde"
       - "Direitos Humanos"
@@ -459,3 +455,175 @@ interventions:
     title: "Facilitadores e barreiras à implementação da PrEP no Brasil para a população LGBTQIA+"
     reviewDate: "22/1/2026"
     studyLink: "https://drive.google.com/file/d/1bQNIJevBR-VQ1xtmT6kcWmQqRh0nDc1R/view"
+
+  - status: "Revisão original"
+    name: "Lei de Acesso à Informação (LAI)"
+    resultado: "Transparência pública, accountability e controle social"
+    effectDirection: "positivo"
+    effectStrength: "indeterminado"
+    implementationComplexity: "moderada"
+    implementationNotes: "Regulamentação local, portal de transparência ativa, canal de pedidos (SIC) e capacidade operacional, às vezes com apoio da CGU."
+    costLevel: "variavel"
+    costDescription: "Baixo a médio, administrativo e operacional; a transparência ativa tende a reduzir a demanda por pedidos individuais."
+    summary: >
+      Efeitos sobretudo institucionais: a LAI institucionalizou o direito de acesso, expandiu a transparência ativa e passiva e alterou práticas de gestão da informação. Os efeitos são heterogêneos e predominantemente qualitativos; disponibilizar informação não garante accountability nem redução de irregularidades.
+    dimensions:
+      - "Administração Pública"
+      - "Direito e Democracia"
+    authors: "Jorge Lucas Nery de Oliveira; Ana Paula Lima dos Santos; João Pedro Cavalcanti Silva"
+    title: "Quais os impactos da Lei de Acesso à Informação (LAI)?"
+    reviewDate: "14/9/2026"
+    studyLink: "https://doi.org/10.31235/osf.io/zunkd_v1"
+
+  - status: "Revisão original"
+    name: "Operações policiais"
+    resultado: "Desempenho escolar"
+    effectDirection: "negativo"
+    effectStrength: "indeterminado"
+    implementationComplexity: "complexa"
+    implementationNotes: "Operações frequentes em horário escolar afetam centenas de escolas e interrompem aulas de forma recorrente."
+    costLevel: "sem-informacao"
+    costDescription: "Sem estimativa financeira, mas há custos sociais, humanos e educacionais que vão além do gasto direto do Estado."
+    summary: >
+      Efeito negativo e estatisticamente significativo sobre o desempenho escolar.
+    dimensions:
+      - "Segurança"
+      - "Direitos Humanos"
+      - "Educação"
+    authors: "Diego Arcanjo Campos; Pedro Bahia; Renan Suzano"
+    title: "As operações policiais próximas a escolas afetam a evasão e o desempenho escolar dos alunos no Brasil?"
+    reviewDate: "14/9/2026"
+    studyLink: "https://docs.google.com/document/d/1M1MmufpCOxyf6zK6fkS2gjU-XLSVnFYQB_1Kz9WYNzY/edit?usp=drive_link"
+
+  - status: "Revisão original"
+    name: "Operações policiais"
+    resultado: "Evasão escolar"
+    effectDirection: "negativo"
+    effectStrength: "indeterminado"
+    implementationComplexity: "complexa"
+    implementationNotes: "Operações frequentes em horário escolar afetam centenas de escolas e interrompem aulas de forma recorrente."
+    costLevel: "sem-informacao"
+    costDescription: "Sem estimativa financeira, mas há custos sociais, humanos e educacionais que vão além do gasto direto do Estado."
+    summary: >
+      Efeito negativo e estatisticamente significativo sobre a probabilidade de abandono escolar.
+    dimensions:
+      - "Segurança"
+      - "Direitos Humanos"
+      - "Educação"
+    authors: "Diego Arcanjo Campos; Pedro Bahia; Renan Suzano"
+    title: "As operações policiais próximas a escolas afetam a evasão e o desempenho escolar dos alunos no Brasil?"
+    reviewDate: "14/9/2026"
+    studyLink: "https://docs.google.com/document/d/1M1MmufpCOxyf6zK6fkS2gjU-XLSVnFYQB_1Kz9WYNzY/edit?usp=drive_link"
+
+  - status: "Revisão original"
+    name: "Programas de aprendizagem baseada em trabalho"
+    resultado: "Renda"
+    effectDirection: "positivo"
+    effectStrength: "indeterminado"
+    implementationComplexity: "moderada"
+    implementationNotes: "Articulação entre escola e setor produtivo e cursos calibrados à demanda local."
+    costLevel: "sem-informacao"
+    costDescription: "Custo-benefício potencialmente muito positivo, condicionado à conclusão dos cursos e à inserção compatível com a formação."
+    summary: >
+      Efeito positivo sobre a renda. Funcionam melhor programas longos e estruturados, com forte integração escola–empresa e alinhados a Arranjos Produtivos Locais; mentoria e job shadowing elevam a renda precoce em 6%; assistência estudantil e competências socioemocionais ampliam permanência e empregabilidade.
+    dimensions:
+      - "Educação"
+      - "Emprego e Renda"
+    authors: "Gabriel Merlim Moraes Villela; Ana Paula Lima dos Santos"
+    title: "Programas de Aprendizagem Baseada em Trabalho e de Educação Profissional Técnica"
+    reviewDate: "10/8/2026"
+    studyLink: "https://drive.google.com/file/d/1gNlEUcIyLFfm3-qOQl1cImZoU1CG8Do7/view?usp=sharing"
+
+  - status: "Revisão original"
+    name: "Programas de aprendizagem baseada em trabalho"
+    resultado: "Empregabilidade"
+    effectDirection: "positivo"
+    effectStrength: "indeterminado"
+    implementationComplexity: "moderada"
+    implementationNotes: "Articulação entre escola e setor produtivo e cursos calibrados à demanda local."
+    costLevel: "sem-informacao"
+    costDescription: "Custo-benefício potencialmente muito positivo, condicionado à conclusão dos cursos e à inserção compatível com a formação."
+    summary: >
+      Efeito positivo sobre a empregabilidade. Funcionam melhor programas longos e estruturados, com forte integração escola–empresa e alinhados a Arranjos Produtivos Locais; mentoria e job shadowing elevam a renda precoce em 6%; assistência estudantil e competências socioemocionais ampliam permanência e empregabilidade.
+    dimensions:
+      - "Educação"
+      - "Emprego e Renda"
+    authors: "Gabriel Merlim Moraes Villela; Ana Paula Lima dos Santos"
+    title: "Programas de Aprendizagem Baseada em Trabalho e de Educação Profissional Técnica"
+    reviewDate: "10/8/2026"
+    studyLink: "https://drive.google.com/file/d/1gNlEUcIyLFfm3-qOQl1cImZoU1CG8Do7/view?usp=sharing"
+
+  - status: "Revisão original"
+    name: "Formação on the job (programas de aprendizado/estágio)"
+    resultado: "Renda"
+    effectDirection: "positivo"
+    effectStrength: "indeterminado"
+    implementationComplexity: "moderada"
+    implementationNotes: "Remuneração adequada, integração empresa–escola e articulação com intermediação de emprego ao fim do contrato."
+    costLevel: "sem-informacao"
+    costDescription: "Os estudos raramente estimam ganhos de produtividade, o que impede calcular o custo-benefício."
+    summary: >
+      Efeito positivo sobre a renda. Funcionam melhor formações com prática intensa (≥40% do tempo na empresa) e supervisão ativa, integração curricular teoria–prática, subsídios fiscais ao empregador, certificação portável de competências e financiamento estável com participação privada.
+    dimensions:
+      - "Educação"
+      - "Emprego e Renda"
+    authors: "Shamira Rossi; Laryssa Vieira Reis Oliveira"
+    title: "Programas de Formação no Próprio Ambiente de Trabalho"
+    reviewDate: "10/8/2026"
+    studyLink: "https://drive.google.com/file/d/1ZMgAw2YN12GaiPKiKqXJoU2Ied6qZsWL/view?usp=sharing"
+
+  - status: "Revisão original"
+    name: "Formação on the job (programas de aprendizado/estágio)"
+    resultado: "Empregabilidade"
+    effectDirection: "positivo"
+    effectStrength: "indeterminado"
+    implementationComplexity: "moderada"
+    implementationNotes: "Remuneração adequada, integração empresa–escola e articulação com intermediação de emprego ao fim do contrato."
+    costLevel: "sem-informacao"
+    costDescription: "Os estudos raramente estimam ganhos de produtividade, o que impede calcular o custo-benefício."
+    summary: >
+      Efeito positivo sobre a empregabilidade. Funcionam melhor formações com prática intensa (≥40% do tempo na empresa) e supervisão ativa, integração curricular teoria–prática, subsídios fiscais ao empregador, certificação portável de competências e financiamento estável com participação privada.
+    dimensions:
+      - "Educação"
+      - "Emprego e Renda"
+    authors: "Shamira Rossi; Laryssa Vieira Reis Oliveira"
+    title: "Programas de Formação no Próprio Ambiente de Trabalho"
+    reviewDate: "10/8/2026"
+    studyLink: "https://drive.google.com/file/d/1ZMgAw2YN12GaiPKiKqXJoU2Ied6qZsWL/view?usp=sharing"
+
+  - status: "Revisão original"
+    name: "Programas de segunda chance (EJA)"
+    resultado: "Evasão escolar"
+    effectDirection: "neutro"
+    effectStrength: "indeterminado"
+    implementationComplexity: "complexa"
+    implementationNotes: "Oferta em horários e locais compatíveis com a rotina de trabalhadores e cuidadores e suporte material (transporte, alimentação, creche noturna)."
+    costLevel: "baixo"
+    costDescription: "Baixo por matrícula; os retornos da conclusão indicam custo-benefício favorável, frequentemente desperdiçado pelas baixas taxas de conclusão."
+    summary: >
+      Evidência predominantemente qualitativa (21 estudos), sem estimativas causais; conciliação estudo–trabalho–família e origem social são os principais determinantes da evasão (20 de 21 estudos). Funciona melhor com currículo adaptado à vida adulta, professores com formação para EJA, busca ativa de faltosos, formatos híbridos com tutoria, vínculo com oportunidades de emprego e apoio ao cuidado infantil.
+    dimensions:
+      - "Educação"
+    authors: "Jorge Lucas Nery de Oliveira; Frederico Augusto Auad de Gomes Filho"
+    title: "Determinantes de Sucesso da Educação de Jovens e Adultos"
+    reviewDate: "10/8/2026"
+    studyLink: "https://drive.google.com/file/d/1gGTuvCM1xH9s2u1fcuzknX7SC6dyeAvq/view?usp=sharing"
+
+  - status: "Revisão original"
+    name: "Programas de segunda chance (EJA)"
+    resultado: "Renda"
+    effectDirection: "positivo"
+    effectStrength: "indeterminado"
+    implementationComplexity: "complexa"
+    implementationNotes: "Oferta em horários e locais compatíveis com a rotina de trabalhadores e cuidadores e suporte material (transporte, alimentação, creche noturna)."
+    costLevel: "baixo"
+    costDescription: "Baixo por matrícula; os retornos da conclusão indicam custo-benefício favorável, frequentemente desperdiçado pelas baixas taxas de conclusão."
+    summary: >
+      A conclusão da EJA está associada a ganhos no mercado de trabalho (Felicio, 2025, com PNADc e pareamento por escore de propensão): a alfabetização eleva a renda em 16,3% e a formalização em 7,7 p.p.; a EJA EF2, +4,6% na renda; a EJA EM, +6% na renda e +9,4 p.p. na formalização. Os retornos são menores que os do ensino regular.
+    dimensions:
+      - "Educação"
+      - "Emprego e Renda"
+    authors: "Jorge Lucas Nery de Oliveira; Frederico Augusto Auad de Gomes Filho"
+    title: "Determinantes de Sucesso da Educação de Jovens e Adultos"
+    reviewDate: "10/8/2026"
+    studyLink: "https://drive.google.com/file/d/1gGTuvCM1xH9s2u1fcuzknX7SC6dyeAvq/view?usp=sharing"
