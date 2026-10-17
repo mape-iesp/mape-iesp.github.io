@@ -6,6 +6,82 @@ import Features3 from '~/components/widgets/Features3.astro';
 const metadata = {
   title: 'Publicações',
 };
+
+// Most recent first
+const imprensa = [
+  {
+    title: 'Disque 100 no acolhimento à população LGBTQIA+',
+    journal: 'Nexo Políticas Públicas',
+    date: '2026-10-07',
+    doi: 'https://pp.nexojornal.com.br/ponto-de-vista/2026/10/07/disque-100-no-acolhimento-a-populacao-lgbtqia',
+  },
+  {
+    title: 'Programa Bolsa Verde: síntese de evidências',
+    journal: 'Nexo Políticas Públicas',
+    date: '2026-09-24',
+    doi: 'https://pp.nexojornal.com.br/ponto-de-vista/2026/09/24/programa-bolsa-verde-sintese-de-evidencias',
+  },
+  {
+    title: 'Facilitadores e barreiras à implementação da PrEP no Brasil para a população LGBTQIA+',
+    journal: 'Nexo Políticas Públicas',
+    date: '2026-08-24',
+    doi: 'https://pp.nexojornal.com.br/ponto-de-vista/2026/08/24/facilitadores-e-barreiras-a-implementacao-da-prep-no-brasil-para-a-populacao-lgbtqia',
+  },
+  {
+    title: 'Políticas habitacionais aumentam a polarização local?',
+    journal: 'Nexo Políticas Públicas',
+    date: '2026-07-13',
+    doi: 'https://pp.nexojornal.com.br/ponto-de-vista/2026/07/13/politicas-habitacionais-aumentam-a-polarizacao-local',
+  },
+  {
+    title: 'Proinfa: os efeitos da política de incentivo às energias renováveis no Brasil',
+    journal: 'Nexo Políticas Públicas',
+    date: '2025-12-10',
+    doi: 'https://pp.nexojornal.com.br/ponto-de-vista/2025/12/10/proinfa-os-efeitos-da-politica-de-incentivo-as-energias-renovaveis-no-brasil',
+  },
+  {
+    title: 'A proibição do uso de celulares em escolas melhora o desempenho dos estudantes?',
+    journal: 'Nexo Políticas Públicas',
+    date: '2025-11-26',
+    doi: 'https://pp.nexojornal.com.br/ponto-de-vista/2025/11/26/a-proibicao-do-uso-de-celulares-em-escolas-melhora-o-desempenho-dos-estudantes',
+  },
+  {
+    title: 'O que funciona? Uma proposta de metodologia para sintetizar evidências e avaliar políticas públicas',
+    journal: 'Nexo Políticas Públicas',
+    date: '2025-11-07',
+    doi: 'https://pp.nexojornal.com.br/ponto-de-vista/2025/11/07/o-que-funciona-uma-proposta-de-metodologia-para-sintetizar-evidencias-e-avaliar-politicas-publicas',
+  },
+  {
+    title: 'Entre preparação e recuperação: desastres ambientais e responsabilidades políticas',
+    journal: 'Blog Gestão, Política & Sociedade',
+    date: '2024-05-20',
+    doi: 'https://periodicos.fgv.br/cgpc/announcement/view/281',
+  },
+  {
+    title: 'Como Lula tenta frear o controle parlamentar do Orçamento',
+    journal: 'Nexo Jornal',
+    date: '2024-01-02',
+    doi: 'https://www.nexojornal.com.br/expresso/2024/01/02/como-lula-tenta-frear-o-controle-parlamentar-do-orcamento',
+  },
+  {
+    title: 'Comunistas do PL',
+    journal: 'O Globo',
+    date: '2023-07-09',
+    doi: 'https://oglobo.globo.com/politica/noticia/2023/07/09/comunistas-do-pl-19-dos-99-deputados-do-partido-de-bolsonaro-tem-historico-pro-governo-lula.ghtml',
+  },
+  {
+    title: 'Congresso hostil expõe fracasso de Lula em apelo por voto em deputados "do time"',
+    journal: 'Folha de S.Paulo',
+    date: '2023-06-03',
+    doi: 'https://www1.folha.uol.com.br/poder/2023/06/congresso-hostil-expoe-fracasso-de-lula-em-apelo-por-voto-em-deputados-do-time.shtml',
+  },
+  {
+    title: 'O impacto de anistiar partidos que atropelam regras eleitorais',
+    journal: 'Nexo Jornal',
+    date: '2023-05-16',
+    doi: 'https://www.nexojornal.com.br/expresso/2023/05/16/O-impacto-de-anistiar-partidos-que-atropelam-regras-eleitorais',
+  },
+].sort((a, b) => b.date.localeCompare(a.date));
 ---
 
 <Layout metadata={metadata}>
@@ -169,68 +245,7 @@ const metadata = {
     subtitle="Artigos, entrevistas e participações em na mídia"
     columns={1}
     isBeforeContent={true}
-    items={[
-      {
-        title: 'Entre preparação e recuperação: desastres ambientais e responsabilidades políticas ',
-        journal: 'Blog Gestão, Política & Sociedade',
-        doi: 'https://periodicos.fgv.br/cgpc/announcement/view/281',
-      },
-      {
-        title: 'O impacto de anistiar partidos que atropelam regras eleitorais',
-        journal: 'Nexo Jornal',
-        doi: 'https://www.nexojornal.com.br/expresso/2023/05/16/O-impacto-de-anistiar-partidos-que-atropelam-regras-eleitorais',
-      },
-      {
-        title: 'Congresso hostil expõe fracasso de Lula em apelo por voto em deputados "do time"',
-        journal: 'Folha de S.Paulo',
-        doi: 'https://www1.folha.uol.com.br/poder/2023/06/congresso-hostil-expoe-fracasso-de-lula-em-apelo-por-voto-em-deputados-do-time.shtml ',
-      },
-      {
-        title: 'Comunistas do PL',
-        journal: 'O Globo',
-        doi: 'https://oglobo.globo.com/politica/noticia/2023/07/09/comunistas-do-pl-19-dos-99-deputados-do-partido-de-bolsonaro-tem-historico-pro-governo-lula.ghtml',
-      },
-      {
-        title: 'Como Lula tenta frear o controle parlamentar do Orçamento',
-        journal: 'Nexo Jornal',
-        doi: 'https://www.nexojornal.com.br/expresso/2024/01/02/como-lula-tenta-frear-o-controle-parlamentar-do-orcamento',
-      },
-      {
-        title: 'O que funciona? Uma proposta de metodologia para sintetizar evidências e avaliar políticas públicas',
-        journal: 'Nexo Políticas Públicas',
-        doi: 'https://pp.nexojornal.com.br/ponto-de-vista/2025/11/07/o-que-funciona-uma-proposta-de-metodologia-para-sintetizar-evidencias-e-avaliar-politicas-publicas',
-      },
-      {
-        title: 'A proibição do uso de celulares em escolas melhora o desempenho dos estudantes?',
-        journal: 'Nexo Políticas Públicas',
-        doi: 'https://pp.nexojornal.com.br/ponto-de-vista/2025/11/26/a-proibicao-do-uso-de-celulares-em-escolas-melhora-o-desempenho-dos-estudantes',
-      },
-      {
-        title: 'Proinfa: os efeitos da política de incentivo às energias renováveis no Brasil',
-        journal: 'Nexo Políticas Públicas',
-        doi: 'https://pp.nexojornal.com.br/ponto-de-vista/2025/12/10/proinfa-os-efeitos-da-politica-de-incentivo-as-energias-renovaveis-no-brasil',
-      },
-      {
-        title: 'Políticas habitacionais aumentam a polarização local?',
-        journal: 'Nexo Políticas Públicas',
-        doi: 'https://pp.nexojornal.com.br/ponto-de-vista/2026/07/13/politicas-habitacionais-aumentam-a-polarizacao-local',
-      },
-      {
-        title: 'Facilitadores e barreiras à implementação da PrEP no Brasil para a população LGBTQIA+',
-        journal: 'Nexo Políticas Públicas',
-        doi: 'https://pp.nexojornal.com.br/ponto-de-vista/2026/08/24/facilitadores-e-barreiras-a-implementacao-da-prep-no-brasil-para-a-populacao-lgbtqia',
-      },
-      {
-        title: 'Programa Bolsa Verde: síntese de evidências',
-        journal: 'Nexo Políticas Públicas',
-        doi: 'https://pp.nexojornal.com.br/ponto-de-vista/2026/09/24/programa-bolsa-verde-sintese-de-evidencias',
-      },
-      {
-        title: 'Disque 100 no acolhimento à população LGBTQIA+',
-        journal: 'Nexo Políticas Públicas',
-        doi: 'https://pp.nexojornal.com.br/ponto-de-vista/2026/10/07/disque-100-no-acolhimento-a-populacao-lgbtqia',
-      },
-    ]}
+    items={imprensa}
   >
   </Features3>
 
