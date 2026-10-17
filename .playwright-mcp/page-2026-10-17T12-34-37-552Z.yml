@@ -1,0 +1,228 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "MAPE" [ref=e6] [cursor=pointer]:
+        - /url: /
+      - navigation "Main navigation" [ref=e8]:
+        - list [ref=e9]:
+          - listitem [ref=e10]:
+            - link "Início" [ref=e11] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e12]:
+            - button "Sobre" [ref=e13] [cursor=pointer]
+          - listitem [ref=e16]:
+            - button "Pesquisa" [ref=e17] [cursor=pointer]
+          - listitem [ref=e20]:
+            - button "Publicações" [ref=e21] [cursor=pointer]
+          - listitem [ref=e24]:
+            - button "Utilidades" [ref=e25] [cursor=pointer]
+          - listitem [ref=e28]:
+            - link "OQF" [ref=e29] [cursor=pointer]:
+              - /url: /oqf
+          - listitem [ref=e30]:
+            - link "Blog" [ref=e31] [cursor=pointer]:
+              - /url: /blog
+          - listitem [ref=e32]:
+            - link "Contato" [ref=e33] [cursor=pointer]:
+              - /url: /contato
+      - generic [ref=e35]:
+        - link "RSS Feed" [ref=e37] [cursor=pointer]:
+          - /url: /rss.xml
+        - generic [ref=e40]:
+          - link [ref=e41] [cursor=pointer]:
+            - /url: https://instagram.com/mape.iesp
+          - link [ref=e44] [cursor=pointer]:
+            - /url: https://x.com/mape_iesp
+  - main [ref=e47]:
+    - article [ref=e49]:
+      - generic [ref=e50]:
+        - paragraph [ref=e52]:
+          - time [ref=e55]: 17 de out. de 2026
+          - text: ·
+          - generic [ref=e58]: Diego Arcanjo Campos
+          - text: ·
+          - link "analise" [ref=e59] [cursor=pointer]:
+            - /url: /category/analise
+          - text: · 6 min de leitura
+        - 'heading "Segurança Pública e eleições: sintomas de fragilidade democrática no Brasil" [level=1] [ref=e60]'
+        - paragraph [ref=e61]: Como as operações policiais e o medo do crime se relacionam com o comportamento eleitoral
+        - img "Como as operações policiais e o medo do crime se relacionam com o comportamento eleitoral" [ref=e62]
+      - generic [ref=e63]:
+        - blockquote [ref=e64]:
+          - paragraph [ref=e65]:
+            - strong [ref=e66]: Diego Arcanjo Campos, Mestrando em Ciência Política (IESP-UERJ)
+        - paragraph [ref=e67]: A segurança pública no Brasil e na América Latina é um dos desafios institucionais e sociais mais complexos da atualidade. Historicamente marcada por abordagens reativas e pautadas no confronto direto, a gestão da ordem pública transita permanentemente entre a exigência de redução dos indicadores de criminalidade e a necessidade de assegurar os direitos fundamentais do cidadão. Às vésperas das eleições gerais que ocorrerão no próximo dia 4 de outubro, gostaria de abordar uma relação que é de extrema importância para o cidadão no cálculo que envolve o voto, ou seja, a relação entre segurança pública e comportamento eleitoral.
+        - paragraph [ref=e68]: "A “Operação Contenção”, realizada em 28 de Outubro de 2025, nos Complexos do Alemão e da Penha (RJ), foi classificada pelo Dicionário de Favelas Marielle Franco como a operação policial mais letal da história do Rio de Janeiro. A operação, que ocorreu ainda durante a gestão do ex-governador Cláudio Castro, choca por seus números: foram 121 mortos e quase uma centena de prisões. A partir desses números, duas questões precisam ser destacadas. A primeira delas é que uma operação dessa envergadura impacta negativamente a população local, que já é vítima da vulnerabilidade socioeconômica e da gestão narcotraficante sobre o território, ao retirar deles o direito à circulação no território, e o direito de acesso aos poucos dispositivos onde o Estado se faz presente nessas localidades, como postos de saúde e escolas. A segunda questão diz respeito à ineficácia das chamadas mega operações (Barbosa et al., 2025; Deole, 2018; Monteiro e Rocha, 2017)."
+        - paragraph [ref=e69]: Não é de hoje que a literatura das ciências sociais aponta a ineficácia das operações de repressão ao narcotráfico feitos com base no paradigma de Guerra às Drogas (Ferreira, 2020; Labrousse, 2010; Rodrigues,2012), no entanto, desde os anos 1980 com a ascensão das principais organizações narcotraficantes no Brasil, a tática permanece a mesma, e o crime organizado não apenas cresceu, mas se complexificou economicamente, diversificando suas formas de obtenção e lavagem de dinheiro, como foi observado a partir da operação interagências Carbono Oculto, em agosto de 2025, além de financiar braços atuantes na política, como exemplificado no caso dos ex-deputados da ALERJ Rodrigo Bacellar e TH Jóias.
+        - paragraph [ref=e70]: É comum entre a população carioca a percepção de que as mega operações aconteçam às vésperas de períodos eleitorais, o que é confirmado em estudo da agência Rede de Observatórios de Segurança, que registrou alta de 18% nas operações policiais no segundo semestre de 2022, às vésperas das eleições. O mesmo estudo verifica a ocorrência do aumento no número de operações não apenas no Rio de Janeiro, mas também nos estados da Bahia, Pernambuco, Ceará e São Paulo. Essas operações, realizadas sob o governo de candidatos à esquerda e à direita do espectro político, funcionam como um aceno à população na tentativa de “mostrar serviço”, e refletem diretamente nas pesquisas sobre intenção de voto. No Rio de Janeiro, antes das operações na gestão Cláudio Castro, o ex-governador Wilson Witzel fez uso da mesma tática (Oliveira, 2022; Ramos, 2022).
+        - paragraph [ref=e71]: Buscando entender tal fenômeno, algumas revisões de literatura nos ajudam a ter uma melhor compreensão do cenário. Mais além, literaturas relacionadas ao estudo da Guerra às Drogas, securitização e militarização da política também auxiliam a ter uma compreensão mais ampla do que leva ao aumento das operações policiais nas proximidades do período eleitoral (Hoecker e Verdes-Montenegro,2023).
+        - paragraph [ref=e72]: De acordo com Cardoso e Borba (2022) a experiência concreta da violência e o medo do crime, experiências próximas mas não diretamente relacionadas, constituem terreno fértil para o populismo penal e discursos autoritários, exercendo impacto no comportamento eleitoral e na saúde da democracia. A revisão realizada pelos autores aponta para efeitos negativos da vitimização e do medo do crime na legitimidade democrática latino-americana.
+        - paragraph [ref=e73]: "Ainda nesse estudo, os autores afirmam que o crime pode interferir nos resultados das eleições de modos distintos: através da decisão de comparecimento ou abstenção no pleito; os elevados níveis das taxas de crime, vitimização e insegurança, funcionam como combustível para o apoio a plataformas que defendem políticas alinhadas ao populismo penal; e ainda a vitimização e a insegurança afetam o apoio ao incumbente na tentativa de reeleição. Compreender esses resultados importa não apenas no que diz respeito ao apoio e confiança popular às instituições democráticas, mas também para o entendimento de uma das causas pelas quais as políticas de segurança pública, no momento, repetem o mesmo padrão de ação, e atentam para o uso indevido do poder de polícia por parte do poder político."
+        - paragraph [ref=e74]: "A literatura sobre a relação entre política e segurança pública tem espaço e relevância para ser expandida, e é necessário que seja. Cabe nessa agenda de pesquisa, por exemplo, o acesso à segurança e o acesso à justiça como fatores que também estão implicados na tomada de decisão do eleitor. E essa é uma agenda que interessa não apenas à academia, mas igualmente ao cidadão brasileiro. A segurança pública é um direito de todos, e a compreensão da relação entre esse direito e o voto é essencial para a tomada de decisão do eleitor na escolha de seus representantes. Desenvolver essa agenda de pesquisa e fomentar o debate público ao redor dela evoca um dilema de interesse popular: como lutar contra o crime organizado e preservar direitos políticos e civis que são essenciais à democracia?"
+        - heading "Referências" [level=2] [ref=e75]
+        - paragraph [ref=e76]: "BARBOSA, Rogério Jerônimo et al. Educação sob cerco: impactos do controle territorial do tráfico e da milícia sobre o desempenho escolar. Estudos Avançados, v. 39, p. e39115351, 2025."
+        - paragraph [ref=e77]: "DEOLE, Sumit S. Human capital consequences of violence in schools: Estimating the impact of violence in schools on education outcomes in Brazil. Review of Development Economics, v. 22, n. 1, p. 287–310, 2018."
+        - paragraph [ref=e78]:
+          - text: "AÇÕES POLICIAIS têm alta com proximidade das eleições 2022. Rede de Observatórios da Segurança, 18 ago. 2022. Disponível em:"
+          - link "https://observatorioseguranca.com.br/raio-x-das-acoes-de-policiamento-alta-no-segundo-trimestre-com-proximidade-das-eleicoes-2022/" [ref=e79] [cursor=pointer]:
+            - /url: https://observatorioseguranca.com.br/raio-x-das-acoes-de-policiamento-alta-no-segundo-trimestre-com-proximidade-das-eleicoes-2022/
+          - text: ". Acesso em: 14 set. 2026."
+        - paragraph [ref=e80]: "FERREIRA, Gabriela da Silva. Economia política das drogas: uma análise da geopolítica do tráfico da cocaína. 2020."
+        - paragraph [ref=e81]: "HOECKER, Marcos Robledo; VERDES-MONTENEGRO, Francisco J. (Eds.). Militarización, militarismo y democracia: ¿nuevas tendencias en América Latina? Madrid: Fundación Carolina, 2023."
+        - paragraph [ref=e82]: "LABROUSSE, A. Geopolítica das Drogas. São Paulo: Desatino, 2010."
+        - paragraph [ref=e83]: "MONTEIRO, Joana; ROCHA, Rudi. Drug Battles and School Achievement: Evidence from Rio de Janeiro’s Favelas. The Review of Economics and Statistics, v. 99, n. 2, p. 213–228, 1 maio 2017."
+        - paragraph [ref=e84]:
+          - text: "OLIVEIRA, Aercio Barbosa de. No Rio, violência urbana em ano eleitoral. FASE, 19 jan. 2022. Disponível em:"
+          - link "https://fase.org.br/pt/artigos/violencia-urbana-em-ano-eleitoral/" [ref=e85] [cursor=pointer]:
+            - /url: https://fase.org.br/pt/artigos/violencia-urbana-em-ano-eleitoral/
+          - text: "Acesso em: 22 set. 2026."
+        - paragraph [ref=e86]:
+          - text: "OPERAÇÃO Carbono Oculto: revelações e desdobramentos. Transparência Internacional - Brasil, 10 fev. 2026. Disponível em:"
+          - link "https://transparenciainternacional.org.br/posts/operacao-carbono-oculto-revelacoes-e-desdobramentos/" [ref=e87] [cursor=pointer]:
+            - /url: https://transparenciainternacional.org.br/posts/operacao-carbono-oculto-revelacoes-e-desdobramentos/
+          - text: ". Acesso em: 14 set. 2026."
+        - paragraph [ref=e88]:
+          - text: "OPERAÇÃO Contenção - Análise da operação policial mais letal da história do estado do Rio de Janeiro. In: DICIONÁRIO de Favelas Marielle Franco (WikiFavelas). Rio de Janeiro, 2026. Disponível em:"
+          - link "https://wikifavelas.com.br/index.php/Opera%C3%A7%C3%A3o_Conten%C3%A7%C3%A3o_-_An%C3%A1lise_da_opera%C3%A7%C3%A3o_policial_mais_letal_da_hist%C3%B3ria_do_estado_do_Rio_de_Janeiro" [ref=e89] [cursor=pointer]:
+            - /url: https://wikifavelas.com.br/index.php/Opera%C3%A7%C3%A3o_Conten%C3%A7%C3%A3o_-_An%C3%A1lise_da_opera%C3%A7%C3%A3o_policial_mais_letal_da_hist%C3%B3ria_do_estado_do_Rio_de_Janeiro
+          - text: ". Acesso em: 14 set. 2026."
+        - paragraph [ref=e90]: "RAMOS, Silvia et al. Raio-x das ações de policiamento. Rio de Janeiro: Rede de Observatórios da Segurança/CESeC, 2022."
+        - paragraph [ref=e91]: "RODRIGUES, T.. Narcotráfico e militarização nas Américas: vício de guerra. Contexto Internacional, v. 34, n. 1, jan. 2012."
+        - paragraph [ref=e92]:
+          - text: "SAIGG, Mahomed; MARTINS, Marco Antônio. Rodrigo Bacellar é preso novamente pela Polícia Federal. G1, Rio de Janeiro, 27 mar. 2026. Disponível em:"
+          - link "https://g1.globo.com/rj/rio-de-janeiro/noticia/2026/03/27/rodrigo-bacellar-e-preso-pela-policia-federal.ghtml" [ref=e93] [cursor=pointer]:
+            - /url: https://g1.globo.com/rj/rio-de-janeiro/noticia/2026/03/27/rodrigo-bacellar-e-preso-pela-policia-federal.ghtml
+          - text: ". Acesso em: 14 set. 2026."
+        - paragraph [ref=e94]:
+          - emphasis [ref=e95]:
+            - text: "Foto: Acediscovery, via"
+            - link "Wikimedia Commons" [ref=e96] [cursor=pointer]:
+              - /url: https://commons.wikimedia.org/wiki/File:Complexo-do-Alemao-Rio-de-Janeiro.jpg
+            - text: ", licença"
+            - link "CC BY 4.0" [ref=e97] [cursor=pointer]:
+              - /url: https://creativecommons.org/licenses/by/4.0/
+            - text: . Imagem adaptada para o cabeçalho.
+      - generic [ref=e98]:
+        - list [ref=e99]:
+          - listitem [ref=e100]: eleicoes-2026
+          - listitem [ref=e101]: seguranca-publica
+          - listitem [ref=e102]: rio-de-janeiro
+          - listitem [ref=e103]: democracia
+        - generic [ref=e104]:
+          - text: "Compartilhe em suas redes:"
+          - button "Compartilhe no X" [ref=e105] [cursor=pointer]
+          - button "Compartilhe no Facebook" [ref=e108] [cursor=pointer]
+          - button "Compartilhe no Linkedin" [ref=e111] [cursor=pointer]
+          - button "Compartilhe no Whatsapp" [ref=e114] [cursor=pointer]
+          - button "Compartilhe por e-mail" [ref=e117] [cursor=pointer]
+    - link "Voltar ao blog" [ref=e121] [cursor=pointer]:
+      - /url: /blog
+    - generic [ref=e125]:
+      - generic [ref=e127]:
+        - heading "Postagens relacionadas" [level=2] [ref=e128]
+        - link "Ver todas as postagens »" [ref=e129] [cursor=pointer]:
+          - /url: /blog
+      - generic [ref=e130]:
+        - article [ref=e131]:
+          - link [ref=e133] [cursor=pointer]:
+            - /url: /o-que-dizem-candidatos-o-que-querem-eleitores
+            - img "O que dizem os candidatos e o que querem os eleitores?" [ref=e134]
+          - heading [level=3] [ref=e135]:
+            - link "O que dizem os candidatos e o que querem os eleitores?" [ref=e136] [cursor=pointer]:
+              - /url: /o-que-dizem-candidatos-o-que-querem-eleitores
+          - paragraph [ref=e137]: Uma análise do primeiro debate entre candidatos à prefeitura da cidade do Rio de Janeiro
+        - article [ref=e138]:
+          - link [ref=e140] [cursor=pointer]:
+            - /url: /primeira-reuniao-mape
+            - img "Reunião de planejamento" [ref=e141]
+          - heading [level=3] [ref=e142]:
+            - link "Reunião de planejamento" [ref=e143] [cursor=pointer]:
+              - /url: /primeira-reuniao-mape
+          - paragraph [ref=e144]: Pesquisadores e pesquisadoras do MAPE se reuniram para discutir projetos e ações do grupo
+        - article [ref=e145]:
+          - link [ref=e147] [cursor=pointer]:
+            - /url: /desastres-ambientais-no-brasil
+            - img "Explorando dados sobre Desastres Ambientais no Brasil com o mape_municipios" [ref=e148]
+          - heading [level=3] [ref=e149]:
+            - link "Explorando dados sobre Desastres Ambientais no Brasil com o mape_municipios" [ref=e150] [cursor=pointer]:
+              - /url: /desastres-ambientais-no-brasil
+          - paragraph [ref=e151]: Uma análise dos desastres ambientais no Brasil utilizando a base mape_municipios
+  - contentinfo [ref=e152]:
+    - generic [ref=e153]:
+      - generic [ref=e154]:
+        - generic [ref=e156]:
+          - link "MAPE" [ref=e157] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=e158]: Laboratório de Monitoramento e Avaliação de Políticas e Eleições
+          - paragraph [ref=e159]: Instituto de Estudos Sociais e Políticos
+          - paragraph [ref=e160]: Universidade do Estado do Rio de Janeiro
+          - paragraph [ref=e161]: Rua da Matriz, 82, Botafogo, Rio de Janeiro — RJ
+          - paragraph [ref=e162]: CEP 22260-100, Brasil
+          - paragraph [ref=e163]: +55 (21) 2266-8300
+        - generic [ref=e164]:
+          - generic [ref=e165]: Pesquisa
+          - list [ref=e166]:
+            - listitem [ref=e167]:
+              - link "Projetos" [ref=e168] [cursor=pointer]:
+                - /url: /projetos
+            - listitem [ref=e169]:
+              - link "Publicações" [ref=e170] [cursor=pointer]:
+                - /url: /publicacoes
+            - listitem [ref=e171]:
+              - link "Notas na imprensa" [ref=e172] [cursor=pointer]:
+                - /url: /publicacoes#imprensa
+        - generic [ref=e173]:
+          - generic [ref=e174]: Utilidades
+          - list [ref=e175]:
+            - listitem [ref=e176]:
+              - link "OQF - O Que Funciona" [ref=e177] [cursor=pointer]:
+                - /url: /oqf
+            - listitem [ref=e178]:
+              - link "Ferramentas" [ref=e179] [cursor=pointer]:
+                - /url: /ferramentas
+            - listitem [ref=e180]:
+              - link "Dados" [ref=e181] [cursor=pointer]:
+                - /url: /dados
+        - generic [ref=e182]:
+          - generic [ref=e183]: Sobre
+          - list [ref=e184]:
+            - listitem [ref=e185]:
+              - link "Quem somos" [ref=e186] [cursor=pointer]:
+                - /url: /grupo#grupo
+            - listitem [ref=e187]:
+              - link "Atuação" [ref=e188] [cursor=pointer]:
+                - /url: /grupo#linhas
+            - listitem [ref=e189]:
+              - link "Equipe" [ref=e190] [cursor=pointer]:
+                - /url: /grupo#equipe
+            - listitem [ref=e191]:
+              - link "Contato" [ref=e192] [cursor=pointer]:
+                - /url: /contato
+        - generic [ref=e193]:
+          - generic [ref=e194]: Institucional
+          - list [ref=e195]:
+            - listitem [ref=e196]:
+              - link "UERJ" [ref=e197] [cursor=pointer]:
+                - /url: https://www.uerj.br/
+            - listitem [ref=e198]:
+              - link "IESP-UERJ" [ref=e199] [cursor=pointer]:
+                - /url: https://www.iesp.uerj.br/
+            - listitem [ref=e200]:
+              - link "CNPq" [ref=e201] [cursor=pointer]:
+                - /url: "#"
+      - generic [ref=e202]:
+        - list [ref=e203]:
+          - listitem [ref=e204]:
+            - link "X" [ref=e205] [cursor=pointer]:
+              - /url: https://twitter.com/mape_iesp
+          - listitem [ref=e208]:
+            - link "Instagram" [ref=e209] [cursor=pointer]:
+              - /url: http://instagram.com/mape.iesp
+          - listitem [ref=e212]:
+            - link "RSS" [ref=e213] [cursor=pointer]:
+              - /url: /rss.xml
+        - paragraph [ref=e217]:
+          - text: "@2024 MAPE com base em"
+          - link "onWidget" [ref=e218] [cursor=pointer]:
+            - /url: https://onwidget.com/
+          - text: ·
