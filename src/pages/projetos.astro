@@ -27,6 +27,35 @@ const metadata = {
     </Fragment>
   </Hero>
 
+  <!-- Projeto 4 ******************* -->
+  <Content
+    tagline="Projeto"
+    title="Uma geografia das demandas por políticas públicas"
+    items={[
+      {
+        title: 'Objetivo',
+        description:
+          'O objetivo central deste projeto é propor uma agenda de pesquisa abrangente sobre os padrões espaciais da demanda por políticas públicas em nível intra-municipal no Brasil, o que envolve o desenvolvimento de estratégias para mensurar preferências e analisar os fatores que explicam. Sua hipótese central é a de que a configuração espacial dos municípios, marcada por diferentes padrões de segregação ou integração, influencia a distribuição de preferências por bens públicos que geram ou mitigam externalidades e, consequentemente, a formulação, implementação e efetividade destas políticas.',
+      },
+      {
+        title: 'Pesquisa',
+        description: `A pesquisa utilizará duas fontes principais de dados: surveys e novos microdados censitários. Primeiramente, serão utilizados dados de pesquisas de opinião conduzidas pelo DOXA (IESP-UERJ), que realizou recentemente uma pesquisa financiada pela FAPERJ sobre preferências por políticas públicas no estado do Rio de Janeiro com 1400 pessoas adultas. Esses surveys, conduzidos com o georreferenciamento de entrevistas, permitem treinar modelos de aprendizado de máquina que generalizam espacialmente estimativas não viesadas. Em paralelo, será utilizada uma segunda fonte de dados: o Censo de 2022.`,
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hospital_fachada.jpg',
+      alt: 'Fachada de hospital | Unsplash',
+      url: 'https://unsplash.com/photos/a-tall-building-with-a-clock-on-the-side-of-it-zmMRanJEkpw',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight">
+        Quais são os serviços e bens públicos mais demandados pelas milhares de comunidades locais no Brasil?
+      </h3>
+    </Fragment>
+  </Content>
+
+
   <!-- Projeto 1 ******************* -->
   <Content
     tagline="Projeto"
